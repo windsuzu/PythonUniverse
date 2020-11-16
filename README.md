@@ -12,6 +12,7 @@ All tricks are based on the python 3 implementation.
   * [Table of contents](#table-of-contents)
   * [Must Know](#must-know)
   * [String](#string)
+  * [Int](#int)
   * [List](#list)
   * [Set](#set)
   * [Tuple](#tuple)
@@ -22,25 +23,30 @@ All tricks are based on the python 3 implementation.
 
 ## Must Know
 
-| Tricks                                                                     |
-| -------------------------------------------------------------------------- |
-| [List & Dict & Set Comprehensions](must_know/list_dict_set_comprehensions) |
-| [Lambda Functions](must_know/lambda_functions.md)                          |
-| [Map](must_know/map.md)                                                    |
-| [Filter](must_know/filter.md)                                              |
-| [Zip](must_know/zip.md)                                                    |
-| [Reduce](must_know/reduce.md)                                              |
-| [Generator (map, filter, zip)](must_know/generator.md)                     |
-| [Decorator](must_know/decorator.md)                                        |
-| [Context Manager](must_know/context_manager.md)                            |
+| Tricks                                                                        | Simple Demo                                                                                         |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [List & Dict & Set Comprehensions](must_know/list_dict_set_comprehensions.md) | [![](assets/must_know/list_dict_set_comprehensions.png)](must_know/list_dict_set_comprehensions.md) |
+| [Lambda Functions](must_know/lambda_functions.md)                             | [![](assets/must_know/lambda_functions.png)](must_know/lambda_functions.md)                         |
+| [Map](must_know/map.md)                                                       | [![](assets/must_know/map.png)](must_know/map.md)                                                   |
+| [Filter](must_know/filter.md)                                                 | [![](assets/must_know/filter.png)](must_know/filter.md)                                             |
+| [Zip](must_know/zip.md)                                                       | [![](assets/must_know/zip.png)](must_know/zip.md)                                                   |
+| [Reduce](must_know/reduce.md)                                                 | [![](assets/must_know/reduce.png)](must_know/reduce.md)                                             |
+| [*args & **kwargs](must_know/arg_kwarg.md)                                    | [![](assets/must_know/args_kwargs.png)](must_know/args_kwargs.md)                                   |
+| [Generator (map, filter, zip)](must_know/generator.md)                        | [![](assets/must_know/generator.png)](must_know/generator.md)                                       |
+| [Closure & Decorator](must_know/closure_decorator.md)                         | [![](assets/must_know/closure_decorator.png)](must_know/closure_decorator.md)                       |
+| [Context Manager](must_know/context_manager.md)                               | [](must_know/context_manager.md)                                                                    |
 
 ## String
 
 fstring
 
+## Int
+
+add _
+
 ## List
 
-
+for...else
 
 ## Set
 
@@ -52,7 +58,7 @@ swap
 
 ## Design
 
-annotation, typing
+annotation, typing, (...), pass
 
 ## Classes
 
@@ -67,3 +73,12 @@ vscode python file, timeit, time
 ## Others
 
 numba
+
+
+
+
+
+
+
+
+
