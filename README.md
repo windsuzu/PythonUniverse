@@ -34,7 +34,7 @@ All tricks are based on the python 3 implementation.
 | [*args & **kwargs](must_know/arg_kwarg.md)                                    | [![](assets/must_know/args_kwargs.png)](must_know/args_kwargs.md)                                   |
 | [Generator (map, filter, zip)](must_know/generator.md)                        | [![](assets/must_know/generator.png)](must_know/generator.md)                                       |
 | [Closure & Decorator](must_know/closure_decorator.md)                         | [![](assets/must_know/closure_decorator.png)](must_know/closure_decorator.md)                       |
-| [Context Manager](must_know/context_manager.md)                               | [](must_know/context_manager.md)                                                                    |
+| [Context Manager](must_know/context_manager.md)                               | [![](assets/must_know/context_manager.png)](must_know/context_manager.md)                           |
 
 ## String
 

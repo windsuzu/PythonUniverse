@@ -139,4 +139,4 @@ peak memory: 53.36 MiB, increment: 0.00 MiB
 Wall time: 0 ns
 ```
 
-Because the generator doesn't read everything down, it reads it when you need it. So he barely uses any memory space or spends any time on it.
+Because the generator doesn't read everything at once, it reads it when you need it. So it barely uses any memory space or spends any time on it.
