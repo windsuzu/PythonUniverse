@@ -13,6 +13,7 @@ Generally, the developer wants to implement decorator in order to achieve the ef
     * [Closure](#closure)
     * [Decorator](#decorator-1)
     * [Original Functions with parameters](#original-functions-with-parameters)
+    * [Original Functions with returns](#original-functions-with-returns)
   * [Decorator Class](#decorator-class)
   * [Multiple Decorators](#multiple-decorators)
   * [Decorators With Arguments](#decorators-with-arguments)
@@ -105,6 +106,33 @@ def greet(msg, name="User"):
 greet("Hello", name="Jay")
 # func name: greet
 # func args: ('hello',), {'name': 'Jay'}
+# Hello! Jay!
+```
+
+### Original Functions with returns
+
+If we want to change `orig_func` above so that it returns the greeting string, then we will get `None`, to solve this problem just make the wrapper of the decorator return `orig_func`.
+
+``` py
+def decorator(orig_func):
+    def wrapper(*args, **kwargs):
+        print(f"func name: {orig_func.__name__}")
+        print(f"func args: {args}, {kwargs}")
+        func = orig_func(*args, **kwargs)
+        return func
+
+    return wrapper
+
+@decorator
+def greet(msg, name="User"):
+    return f"{msg}! {name}!"
+
+
+msg = greet("Hello", name="Jay")
+# func name: greet
+# func args: ('Hello',), {'name': 'Jay'}
+
+print(msg)
 # Hello! Jay!
 ```
 

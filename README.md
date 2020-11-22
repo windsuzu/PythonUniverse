@@ -11,13 +11,19 @@ All tricks are based on the python 3 implementation.
 * [PythonTricks42](#pythontricks42)
   * [Table of contents](#table-of-contents)
   * [Must Know](#must-know)
+  * [Classes](#classes)
+  * [Collections](#collections)
+  * [Itertools](#itertools)
+  * [Function](#function)
+  * [Conditions](#conditions)
   * [String](#string)
   * [Int](#int)
   * [List](#list)
   * [Set](#set)
   * [Tuple](#tuple)
+  * [Dict](#dict)
+  * [Try](#try)
   * [Design](#design)
-  * [Classes](#classes)
   * [IPython](#ipython)
   * [Others](#others)
 
@@ -35,50 +41,129 @@ All tricks are based on the python 3 implementation.
 | [Generator (map, filter, zip)](must_know/generator.md)                        | [![](assets/must_know/generator.png)](must_know/generator.md)                                       |
 | [Closure & Decorator](must_know/closure_decorator.md)                         | [![](assets/must_know/closure_decorator.png)](must_know/closure_decorator.md)                       |
 | [Context Manager](must_know/context_manager.md)                               | [![](assets/must_know/context_manager.png)](must_know/context_manager.md)                           |
-
-## String
-
-fstring
-
-## Int
-
-add _
-
-## List
-
-for...else
-
-## Set
-
-set for searching
-
-## Tuple
-
-swap
-
-## Design
-
-annotation, typing, (...), pass
+| [Magic Method](must_know/magic_method.md)                                     | [![](assets/must_know/magic_method.png)](must_know/magic_method.md)                                 |
+| [Metaclasses](must_know/metaclasses.md)                                       | [](must_know/metaclasses.md)                                                                        |
 
 ## Classes
 
-OOP
-static, class, nonlocal, global, abstract methods
-private, property, dataclasses
+| Tricks                                  | Simple Demo                                                                                                                                      |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TODO: class instance                    | https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc                                                              |
+| TODO: class variables                   | https://www.youtube.com/watch?v=BJ-VvGyQxho&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=2                                                      |
+| TODO: classmethod & staticmethod        | https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3                                                      |
+| TODO: inheritance                       | https://www.youtube.com/watch?v=RSl87lqOXDE&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=4                                                      |
+| TODO: property, getter, setter, deleter | https://www.youtube.com/watch?v=jCzT9XFZ5bw&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=6                                                      |
+| TODO: dataclasses                       | https://zhuanlan.zhihu.com/p/34963159, https://www.youtube.com/watch?v=FcVCfGJrkUQ,                                                              |
+| TODO: public private                    | https://www.youtube.com/watch?v=xY__sjI5yVU                                                                                                      |
+| TODO: LEGB                              | https://www.youtube.com/watch?v=QVdf0LgmICw                                                                                                      |
+| TODO: abstract class                    | https://medium.com/citycoddee/python%E9%80%B2%E9%9A%8E%E6%8A%80%E5%B7%A7-2-static-class-abstract-methods%E4%B9%8B%E5%AF%A6%E7%8F%BE-1e3b3998bccf |
+| TODO: dynamic                           | https://youtu.be/sxTmJE4k0ho?t=17221                                                                                                             |
+
+## Collections
+
+| Tricks            | Simple Demo                                  |
+| ----------------- | -------------------------------------------- |
+| TODO: defaultdict | https://youtu.be/SNTZpy0oDB8?list=LL&t=1319  |
+| TODO: orderdict   | https://youtu.be/SNTZpy0oDB8?list=LL&t=1178  |
+| TODO: counter     | https://youtu.be/SNTZpy0oDB8?list=LL&t=1609  |
+| TODO: namedtuple  | https://youtu.be/sxTmJE4k0ho?list=LL&t=15915 |
+| TODO: deque       | https://youtu.be/sxTmJE4k0ho?list=LL&t=16357 |
+
+## Itertools
+
+| Tricks | Simple Demo                                 |
+| ------ | ------------------------------------------- |
+| TODO:  | https://www.youtube.com/watch?v=Qu3dThVy6KQ |
+
+## Function
+
+| Tricks                                   | Simple Demo                                                          |
+| ---------------------------------------- | -------------------------------------------------------------------- |
+| TODO: setattr, getattr                   | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1148s |
+| TODO: function in for                    | https://youtu.be/sxTmJE4k0ho?t=17462                                 |
+| TODO: create class                       | https://youtu.be/sxTmJE4k0ho?t=17602                                 |
+| TODO: define and return conditional func | https://youtu.be/sxTmJE4k0ho?t=17704                                 |
+
+## Conditions
+
+| Tricks                     | Simple Demo                                                        |
+| -------------------------- | ------------------------------------------------------------------ |
+| TODO: Ternary Conditionals | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=34s |
+
+## String
+
+| Tricks        | Simple Demo                                                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| TODO: fstring | https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/, https://www.youtube.com/watch?v=nghuHvKLhJA&list=LL&index=19 |
+| TODO: getpass | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1584s                                                                     |
+
+## Int
+
+| Tricks                        | Simple Demo                                                         |
+| ----------------------------- | ------------------------------------------------------------------- |
+| TODO: Underscore Placeholders | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=133s |
+
+## List
+
+| Tricks           | Simple Demo                                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| TODO: enumerate  | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=410s, https://youtu.be/VBokjWj_cEA?list=LL&t=189 |
+| TODO: for...else | https://youtu.be/VBokjWj_cEA?list=LL&t=867                                                                      |
+
+## Set
+
+| Tricks                  | Simple Demo                                                                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
+| TODO: set for searching | https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009, https://youtu.be/r3R3h5ly_8g?t=1010 |
+
+## Tuple
+
+| Tricks                                                       | Simple Demo                                |
+| ------------------------------------------------------------ | ------------------------------------------ |
+| TODO: unpacking https://youtu.be/C-gEQdGVXbk?list=LL&t=1033, | https://youtu.be/SNTZpy0oDB8?list=LL&t=795 |
+| TODO: swap                                                   | https://youtu.be/VBokjWj_cEA?list=LL&t=445 |
+| TODO: assign *variable                                       |                                            |
+
+## Dict
+
+| Tricks    | Simple Demo                                |
+| --------- | ------------------------------------------ |
+| TODO: get | https://youtu.be/VBokjWj_cEA?list=LL&t=726 |
+
+## Try
+
+| Tricks     | Simple Demo                                 |
+| ---------- | ------------------------------------------- |
+| TODO: TEEF | https://youtu.be/VBokjWj_cEA?list=LL&t=1331 |
+
+## Design
+
+| Tricks            | Simple Demo |
+| ----------------- | ----------- |
+| TODO: annotation  |             |
+| TODO: typing,     |             |
+| TODO: (...), pass |             |
 
 ## IPython
 
-vscode python file, timeit, time
+| Tricks                   | Simple Demo |
+| ------------------------ | ----------- |
+| TODO: vscode python file |             |
+| TODO: timeit, time       |             |
+| TODO: memit              |             |
 
 ## Others
 
-numba
-
-
-
-
-
-
-
-
-
+| Tricks               | Simple Demo |
+| -------------------- | ----------- |
+| TODO: numba          |             |
+| TODO: numpy          |             |
+| TODO: pandas         |             |
+| TODO: matplotlib     |             |
+| TODO: seaborn        |             |
+| TODO: sklearn        |             |
+| TODO: transformers   |             |
+| TODO: beautiful soup |             |
+| TODO: requests       |             |
+| TODO: scrapy         |             |
+| TODO: selenium       |             |
