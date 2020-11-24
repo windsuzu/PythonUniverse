@@ -12,9 +12,9 @@ All tricks are based on the python 3 implementation.
   * [Table of contents](#table-of-contents)
   * [Must Know](#must-know)
   * [Classes](#classes)
+  * [Function](#function)
   * [Collections](#collections)
   * [Itertools](#itertools)
-  * [Function](#function)
   * [Conditions](#conditions)
   * [String](#string)
   * [Int](#int)
@@ -42,22 +42,29 @@ All tricks are based on the python 3 implementation.
 | [Closure & Decorator](must_know/closure_decorator.md)                         | [![](assets/must_know/closure_decorator.png)](must_know/closure_decorator.md)                       |
 | [Context Manager](must_know/context_manager.md)                               | [![](assets/must_know/context_manager.png)](must_know/context_manager.md)                           |
 | [Magic Method](must_know/magic_method.md)                                     | [![](assets/must_know/magic_method.png)](must_know/magic_method.md)                                 |
-| [Metaclasses](must_know/metaclasses.md)                                       | [](must_know/metaclasses.md)                                                                        |
+| [Metaclasses](must_know/metaclasses.md)                                       | [![](assets/must_know/metaclasses.png)](must_know/metaclasses.md)                                   |
 
 ## Classes
 
-| Tricks                                  | Simple Demo                                                                                                                                      |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| TODO: class instance                    | https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc                                                              |
-| TODO: class variables                   | https://www.youtube.com/watch?v=BJ-VvGyQxho&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=2                                                      |
-| TODO: classmethod & staticmethod        | https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3                                                      |
-| TODO: inheritance                       | https://www.youtube.com/watch?v=RSl87lqOXDE&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=4                                                      |
-| TODO: property, getter, setter, deleter | https://www.youtube.com/watch?v=jCzT9XFZ5bw&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=6                                                      |
-| TODO: dataclasses                       | https://zhuanlan.zhihu.com/p/34963159, https://www.youtube.com/watch?v=FcVCfGJrkUQ,                                                              |
-| TODO: public private                    | https://www.youtube.com/watch?v=xY__sjI5yVU                                                                                                      |
-| TODO: LEGB                              | https://www.youtube.com/watch?v=QVdf0LgmICw                                                                                                      |
-| TODO: abstract class                    | https://medium.com/citycoddee/python%E9%80%B2%E9%9A%8E%E6%8A%80%E5%B7%A7-2-static-class-abstract-methods%E4%B9%8B%E5%AF%A6%E7%8F%BE-1e3b3998bccf |
-| TODO: dynamic                           | https://youtu.be/sxTmJE4k0ho?t=17221                                                                                                             |
+| Tricks                                                                    | Simple Demo                                                                                                                                      |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [self (class instance)](classes/self_class_instance.md)                   | [![](assets/classes/self_class_instance.png)](classes/self_class_instance.md)                                                                    |
+| [variables (class & instance)](classes/variables_class_instance.md)       | [![](assets/classes/variables_class_instance.png)](classes/variables_class_instance.md)                                                          |
+| [method vs. classmethod vs. staticmethod](classes/method_class_static.md) | [![](assets/classes/method_class_static.png)](classes/method_class_static.md)                                                                    |
+| TODO: public private                                                      | https://www.youtube.com/watch?v=xY__sjI5yVU                                                                                                      |
+| TODO: property, getter, setter, deleter                                   | https://www.youtube.com/watch?v=jCzT9XFZ5bw&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=6                                                      |
+| TODO: dataclasses                                                         | https://zhuanlan.zhihu.com/p/34963159, https://www.youtube.com/watch?v=FcVCfGJrkUQ,                                                              |
+| TODO: LEGB                                                                | https://www.youtube.com/watch?v=QVdf0LgmICw                                                                                                      |
+| TODO: abstract class                                                      | https://medium.com/citycoddee/python%E9%80%B2%E9%9A%8E%E6%8A%80%E5%B7%A7-2-static-class-abstract-methods%E4%B9%8B%E5%AF%A6%E7%8F%BE-1e3b3998bccf |
+| TODO: dynamic                                                             | https://youtu.be/sxTmJE4k0ho?t=17221                                                                                                             |
+
+## Function
+
+| Tricks                                   | Simple Demo                                                          |
+| ---------------------------------------- | -------------------------------------------------------------------- |
+| TODO: setattr, getattr                   | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1148s |
+| TODO: function in for                    | https://youtu.be/sxTmJE4k0ho?t=17462                                 |
+| TODO: define and return conditional func | https://youtu.be/sxTmJE4k0ho?t=17704                                 |
 
 ## Collections
 
@@ -75,14 +82,6 @@ All tricks are based on the python 3 implementation.
 | ------ | ------------------------------------------- |
 | TODO:  | https://www.youtube.com/watch?v=Qu3dThVy6KQ |
 
-## Function
-
-| Tricks                                   | Simple Demo                                                          |
-| ---------------------------------------- | -------------------------------------------------------------------- |
-| TODO: setattr, getattr                   | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1148s |
-| TODO: function in for                    | https://youtu.be/sxTmJE4k0ho?t=17462                                 |
-| TODO: create class                       | https://youtu.be/sxTmJE4k0ho?t=17602                                 |
-| TODO: define and return conditional func | https://youtu.be/sxTmJE4k0ho?t=17704                                 |
 
 ## Conditions
 
