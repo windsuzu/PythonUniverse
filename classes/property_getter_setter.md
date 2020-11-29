@@ -2,6 +2,18 @@
 
 In a previous post [_ (private) vs. __ (name mangling)](classes/private_name_mangling.md), we covered python's implementation of methods similar to "private" in Java. In this post, we will use python to implement `getter` & `setter` similar to Java.
 
+## Table of Contents
+
+* [@Property (Getter, Setter)](#property-getter-setter)
+  * [Table of Contents](#table-of-contents)
+  * [Emulation of Java](#emulation-of-java)
+  * [@Property](#property)
+  * [Usage 1: Password Accessibility](#usage-1-password-accessibility)
+  * [Usage 2: Variable Observer](#usage-2-variable-observer)
+* [Related Articles](#related-articles)
+
+## Emulation of Java
+
 For example, we want to use `setter` and `getter` to access the cat's name.
 
 ``` py
@@ -22,6 +34,8 @@ print(cat.getName())  # dada
 ```
 
 Seems perfect, but python provides `@property` to achieve a more pythonic approach! 
+
+## @Property
 
 `@property` is a [decorator](../must_know/closure_decorator.md) that returns results in real time based on class variables, but it cannot be modified at this time. If you want to change the property (and variables with the property), then use `@variable_name.setter`.
 

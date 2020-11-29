@@ -37,5 +37,3 @@ Person.say(p)  # Exactly the same as `p.say()`
 ```
 
 There is no meaning, but python accepts it.
-
-<!-- TODO: See if it is related to class method -->

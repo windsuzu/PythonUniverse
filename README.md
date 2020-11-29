@@ -25,7 +25,7 @@ All tricks are based on the python 3 implementation.
   * [Try](#try)
   * [Design](#design)
   * [IPython](#ipython)
-  * [Others](#others)
+  * [Other](#other)
 
 ## Must Know
 
@@ -46,17 +46,17 @@ All tricks are based on the python 3 implementation.
 
 ## Classes
 
-| Tricks                                                                    | Simple Demo                                                                                                                                                                                                                                                                              |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [self (class instance)](classes/self_class_instance.md)                   | [![](assets/classes/self_class_instance.png)](classes/self_class_instance.md)                                                                                                                                                                                                            |
-| [variables (class & instance)](classes/variables_class_instance.md)       | [![](assets/classes/variables_class_instance.png)](classes/variables_class_instance.md)                                                                                                                                                                                                  |
-| [method vs. classmethod vs. staticmethod](classes/method_class_static.md) | [![](assets/classes/method_class_static.png)](classes/method_class_static.md)                                                                                                                                                                                                            |
-| [_ (private) vs. __ (name mangling)](classes/private_name_mangling.md)    | [![](assets/classes/private_name_mangling.png)](classes/private_name_mangling.md)                                                                                                                                                                                                        |
-| [@property (getter, setter)](classes/property_getter_setter.md)           | [![](assets/classes/property_getter_setter.png)](classes/property_getter_setter.md)                                                                                                                                                                                                      |
-| [LEGB (local, enclosing, global, builtins)](classes/legb.md)              | [![](assets/classes/legb.png)](classes/legb.md)                                                                                                                                                                                                                                          |
-| TODO: abstract class                                                      | https://medium.com/citycoddee/python%E9%80%B2%E9%9A%8E%E6%8A%80%E5%B7%A7-2-static-class-abstract-methods%E4%B9%8B%E5%AF%A6%E7%8F%BE-1e3b3998bccf, https://www.maxlist.xyz/2019/12/08/python-class-static-abstract-method/#%E4%B8%89_AbstractMethods_%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95 |
-| TODO: dynamic                                                             | https://youtu.be/sxTmJE4k0ho?t=17221                                                                                                                                                                                                                                                     |
-| TODO: dataclasses                                                         | https://zhuanlan.zhihu.com/p/34963159, https://www.youtube.com/watch?v=FcVCfGJrkUQ,                                                                                                                                                                                                      |
+| Tricks                                                                    | Simple Demo                                                                             |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [self (class instance)](classes/self_class_instance.md)                   | [![](assets/classes/self_class_instance.png)](classes/self_class_instance.md)           |
+| [variables (class & instance)](classes/variables_class_instance.md)       | [![](assets/classes/variables_class_instance.png)](classes/variables_class_instance.md) |
+| [method vs. classmethod vs. staticmethod](classes/method_class_static.md) | [![](assets/classes/method_class_static.png)](classes/method_class_static.md)           |
+| [_ (private) vs. __ (name mangling)](classes/private_name_mangling.md)    | [![](assets/classes/private_name_mangling.png)](classes/private_name_mangling.md)       |
+| [@property (getter, setter)](classes/property_getter_setter.md)           | [![](assets/classes/property_getter_setter.png)](classes/property_getter_setter.md)     |
+| [LEGB (local, enclosing, global, builtins)](classes/legb.md)              | [![](assets/classes/legb.png)](classes/legb.md)                                         |
+| [Abstract class](classes/abstract_class.md)                               | [![](assets/classes/abstract_class.png)](classes/abstract_class.md)                     |
+| [Dataclasses](classes/dataclasses.md)                                     | [![](assets/classes/dataclasses.png)](classes/dataclasses.md)                           |
+| [Dynamic Language](classes/dynamic_language.md)                           | [![](assets/classes/dynamic_language.png)](classes/dynamic_language.md)                 |
 
 ## Function
 
@@ -138,11 +138,11 @@ All tricks are based on the python 3 implementation.
 
 ## Design
 
-| Tricks            | Simple Demo |
-| ----------------- | ----------- |
-| TODO: annotation  |             |
-| TODO: typing,     |             |
-| TODO: (...), pass |             |
+| Tricks            | Simple Demo                                                                                                             |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| TODO: annotation  | https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html                     |
+| TODO: typing,     | https://myapollo.com.tw/zh-tw/python-typing-module/                                                                     |
+| TODO: (...), pass | https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number |
 
 ## IPython
 
@@ -152,18 +152,16 @@ All tricks are based on the python 3 implementation.
 | TODO: timeit, time       |             |
 | TODO: memit              |             |
 
-## Others
+## Other
 
-| Tricks               | Simple Demo |
-| -------------------- | ----------- |
-| TODO: numba          |             |
-| TODO: numpy          |             |
-| TODO: pandas         |             |
-| TODO: matplotlib     |             |
-| TODO: seaborn        |             |
-| TODO: sklearn        |             |
-| TODO: transformers   |             |
-| TODO: beautiful soup |             |
-| TODO: requests       |             |
-| TODO: scrapy         |             |
-| TODO: selenium       |             |
+TODO: numba          
+TODO: numpy          
+TODO: pandas         
+TODO: matplotlib     
+TODO: seaborn        
+TODO: sklearn        
+TODO: transformers   
+TODO: beautiful soup 
+TODO: requests       
+TODO: scrapy         
+TODO: selenium       

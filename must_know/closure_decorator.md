@@ -1,7 +1,6 @@
 # Decorator
 
-<!-- TODO: Links to articles on property, classmethod, etc. -->
-Decorator will be seen in many places, such as [@property](), [@classmethod](), [@staticmethod](), and so on.
+Decorator will be seen in many places, such as [@property](../classes/property_getter_setter.md), [@classmethod, @staticmethod](../classes/method_class_static.md), and so on.
 
 Generally, the developer wants to implement decorator in order to achieve the effect of logger or timer.
 
