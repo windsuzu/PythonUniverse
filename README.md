@@ -43,6 +43,7 @@ All tricks are based on the python 3 implementation.
 | [Context Manager](must_know/context_manager.md)                               | [![](assets/must_know/context_manager.png)](must_know/context_manager.md)                           |
 | [Magic Method](must_know/magic_method.md)                                     | [![](assets/must_know/magic_method.png)](must_know/magic_method.md)                                 |
 | [Metaclasses](must_know/metaclasses.md)                                       | [![](assets/must_know/metaclasses.png)](must_know/metaclasses.md)                                   |
+| [Threading & Multiprocessing](must_know/threading_multiprocessing.md)         | [![](assets/must_know/threading_multiprocessing.png)](must_know/threading_multiprocessing.md)       |
 
 ## Classes
 
