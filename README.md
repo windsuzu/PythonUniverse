@@ -15,6 +15,7 @@ All tricks are based on the python 3 implementation.
   * [Function](#function)
   * [Collections](#collections)
   * [Itertools](#itertools)
+  * [os](#os)
   * [Conditions](#conditions)
   * [String](#string)
   * [Int](#int)
@@ -84,6 +85,12 @@ All tricks are based on the python 3 implementation.
 | ------ | ------------------------------------------- |
 | TODO:  | https://www.youtube.com/watch?v=Qu3dThVy6KQ |
 
+
+## os
+
+| Tricks        | Simple Demo                                   |
+| ------------- | --------------------------------------------- |
+| TODO: pathlib | https://myapollo.com.tw/zh-tw/python-pathlib/ |
 
 ## Conditions
 
