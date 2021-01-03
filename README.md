@@ -12,7 +12,7 @@ All tricks are based on the python 3 implementation.
   * [Table of contents](#table-of-contents)
   * [Must Know](#must-know)
   * [Classes](#classes)
-  * [Function](#function)
+  * [Functions](#functions)
   * [Collections](#collections)
   * [Itertools](#itertools)
   * [os](#os)
@@ -60,14 +60,14 @@ All tricks are based on the python 3 implementation.
 | [Dataclasses](classes/dataclasses.md)                                     | [![](assets/classes/dataclasses.png)](classes/dataclasses.md)                           |
 | [Dynamic Language](classes/dynamic_language.md)                           | [![](assets/classes/dynamic_language.png)](classes/dynamic_language.md)                 |
 
-## Function
+## Functions
 
-| Tricks                                   | Simple Demo                                                              |
-| ---------------------------------------- | ------------------------------------------------------------------------ |
-| TODO: enclosing function                 | http://blog.ittraining.com.tw/2019/12/python-why-enclosing-function.html |
-| TODO: setattr, getattr                   | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1148s     |
-| TODO: function in for                    | https://youtu.be/sxTmJE4k0ho?t=17462                                     |
-| TODO: define and return conditional func | https://youtu.be/sxTmJE4k0ho?t=17704                                     |
+| Tricks                                       | Simple Demo                                                          |
+| -------------------------------------------- | -------------------------------------------------------------------- |
+| [Enclosing function](functions/enclosing.md) | [![](assets/functions/enclosing.png)](functions/enclosing.md)        |
+| TODO: setattr, getattr                       | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1148s |
+| TODO: function in for                        | https://youtu.be/sxTmJE4k0ho?t=17462                                 |
+| TODO: define and return conditional func     | https://youtu.be/sxTmJE4k0ho?t=17704                                 |
 
 ## Collections
 
