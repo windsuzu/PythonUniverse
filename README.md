@@ -70,13 +70,13 @@ All tricks are based on the python 3 implementation.
 
 ## Collections
 
-| Tricks            | Simple Demo                                  |
-| ----------------- | -------------------------------------------- |
-| TODO: defaultdict | https://youtu.be/SNTZpy0oDB8?list=LL&t=1319  |
-| TODO: orderdict   | https://youtu.be/SNTZpy0oDB8?list=LL&t=1178  |
-| TODO: counter     | https://youtu.be/SNTZpy0oDB8?list=LL&t=1609  |
-| TODO: namedtuple  | https://youtu.be/sxTmJE4k0ho?list=LL&t=15915 |
-| TODO: deque       | https://youtu.be/sxTmJE4k0ho?list=LL&t=16357 |
+| Tricks                                    | Simple Demo                                                           |
+| ----------------------------------------- | --------------------------------------------------------------------- |
+| [defaultdict](collections/defaultdict.md) | [![](assets/collections/defaultdict.png)](collections/defaultdict.md) |
+| [orderdict](collections/orderdict.md)     | [](collections/orderdict.md)                                          |
+| [counter](collections/counter.md)         | [](collections/counter.md)                                            |
+| [namedtuple](collections/namedtuple.md)   | [](collections/namedtuple.md)                                         |
+| [deque](collections/deque.md)             | [](collections/deque.md)                                              |
 
 ## Itertools
 
