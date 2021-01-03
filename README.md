@@ -62,12 +62,11 @@ All tricks are based on the python 3 implementation.
 
 ## Functions
 
-| Tricks                                       | Simple Demo                                                   |
-| -------------------------------------------- | ------------------------------------------------------------- |
-| [Enclosing function](functions/enclosing.md) | [![](assets/functions/enclosing.png)](functions/enclosing.md) |
-| [Attrs](functions/attrs.md)                  | [![](assets/functions/attrs.png)](functions/attrs.md)         |
-| TODO: function in for                        | https://youtu.be/sxTmJE4k0ho?t=17462                          |
-| TODO: define and return conditional func     | https://youtu.be/sxTmJE4k0ho?t=17704                          |
+| Tricks                                            | Simple Demo                                                                 |
+| ------------------------------------------------- | --------------------------------------------------------------------------- |
+| [Enclosing function](functions/enclosing.md)      | [![](assets/functions/enclosing.png)](functions/enclosing.md)               |
+| [Attrs](functions/attrs.md)                       | [![](assets/functions/attrs.png)](functions/attrs.md)                       |
+| [Dynamic Language](functions/dynamic_language.md) | [![](assets/functions/dynamic_language.png)](functions/dynamic_language.md) |
 
 ## Collections
 
