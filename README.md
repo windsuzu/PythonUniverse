@@ -73,8 +73,8 @@ All tricks are based on the python 3 implementation.
 | Tricks                                    | Simple Demo                                                           |
 | ----------------------------------------- | --------------------------------------------------------------------- |
 | [defaultdict](collections/defaultdict.md) | [![](assets/collections/defaultdict.png)](collections/defaultdict.md) |
-| [orderdict](collections/orderdict.md)     | [](collections/orderdict.md)                                          |
-| [counter](collections/counter.md)         | [](collections/counter.md)                                            |
+| [OrderedDict](collections/ordereddict.md) | [![](assets/collections/ordereddict.png)](collections/ordereddict.md) |
+| [Counter](collections/counter.md)         | [](collections/counter.md)                                            |
 | [namedtuple](collections/namedtuple.md)   | [](collections/namedtuple.md)                                         |
 | [deque](collections/deque.md)             | [](collections/deque.md)                                              |
 
@@ -150,6 +150,7 @@ All tricks are based on the python 3 implementation.
 | TODO: annotation  | https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html                     |
 | TODO: typing,     | https://myapollo.com.tw/zh-tw/python-typing-module/                                                                     |
 | TODO: (...), pass | https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number |
+| TODO: absl        | https://www.jianshu.com/p/f84a5b8c1183                                                                                  |
 
 ## IPython
 
