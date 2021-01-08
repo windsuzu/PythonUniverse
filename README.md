@@ -74,7 +74,7 @@ All tricks are based on the python 3 implementation.
 | ----------------------------------------- | --------------------------------------------------------------------- |
 | [defaultdict](collections/defaultdict.md) | [![](assets/collections/defaultdict.png)](collections/defaultdict.md) |
 | [OrderedDict](collections/ordereddict.md) | [![](assets/collections/ordereddict.png)](collections/ordereddict.md) |
-| [Counter](collections/counter.md)         | [](collections/counter.md)                                            |
+| [Counter](collections/counter.md)         | [![](assets/collections/counter.png)](collections/counter.md)         |
 | [namedtuple](collections/namedtuple.md)   | [](collections/namedtuple.md)                                         |
 | [deque](collections/deque.md)             | [](collections/deque.md)                                              |
 

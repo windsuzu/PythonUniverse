@@ -127,7 +127,7 @@ OrderedCounter(s)
 
 | Article                                   | Link                                                                                           |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| collections - 8.3.6. OrderedDict objects  | https://docs.python.org/3.4/library/collections.html?highlight=ordereddict#ordereddict-objects |
+| collections - OrderedDict objects  | https://docs.python.org/3.4/library/collections.html?highlight=ordereddict#ordereddict-objects |
 | How do I sort a dictionary by value?      | https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value                 |
 | collections之OrderedDict                  | https://zhuanlan.zhihu.com/p/110407087                                                         |
 | 7 More Tricks to Write Better Python Code | https://youtu.be/SNTZpy0oDB8?list=LL&t=1178                                                    |
