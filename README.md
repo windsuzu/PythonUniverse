@@ -4,7 +4,7 @@
 
 All the tricks in the repo are built on the idea that you have a deep understanding of the basic operations of Python, such as string, condition, loop, list, dict, tuple, and so on. 
 
-All tricks are based on the python 3 implementation.
+All tricks are base on the implementation of Python 3.
 
 ## Table of contents
 
@@ -75,7 +75,7 @@ All tricks are based on the python 3 implementation.
 | [defaultdict](collections/defaultdict.md) | [![](assets/collections/defaultdict.png)](collections/defaultdict.md) |
 | [OrderedDict](collections/ordereddict.md) | [![](assets/collections/ordereddict.png)](collections/ordereddict.md) |
 | [Counter](collections/counter.md)         | [![](assets/collections/counter.png)](collections/counter.md)         |
-| [namedtuple](collections/namedtuple.md)   | [](collections/namedtuple.md)                                         |
+| [namedtuple](collections/namedtuple.md)   | [![](assets/collections/namedtuple.png)](collections/namedtuple.md)   |
 | [deque](collections/deque.md)             | [](collections/deque.md)                                              |
 
 ## Itertools
