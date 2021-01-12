@@ -26,7 +26,7 @@ All tricks are base on the implementation of Python 3.
   * [Try](#try)
   * [Design](#design)
   * [IPython](#ipython)
-  * [Other](#other)
+  * [TODOs](#todos)
 
 ## Must Know
 
@@ -76,100 +76,103 @@ All tricks are base on the implementation of Python 3.
 | [OrderedDict](collections/ordereddict.md) | [![](assets/collections/ordereddict.png)](collections/ordereddict.md) |
 | [Counter](collections/counter.md)         | [![](assets/collections/counter.png)](collections/counter.md)         |
 | [namedtuple](collections/namedtuple.md)   | [![](assets/collections/namedtuple.png)](collections/namedtuple.md)   |
-| [deque](collections/deque.md)             | [](collections/deque.md)                                              |
+| [deque](collections/deque.md)             | [![](assets/collections/deque.png)](collections/deque.md)             |
 
 ## Itertools
 
-| Tricks | Simple Demo                                 |
-| ------ | ------------------------------------------- |
-| TODO:  | https://www.youtube.com/watch?v=Qu3dThVy6KQ |
+| Tricks    | Simple Demo                                 |
+| --------- | ------------------------------------------- |
+| Itertools | https://www.youtube.com/watch?v=Qu3dThVy6KQ |
 
 
 ## os
 
-| Tricks        | Simple Demo                                   |
-| ------------- | --------------------------------------------- |
-| TODO: pathlib | https://myapollo.com.tw/zh-tw/python-pathlib/ |
+| Tricks  | Simple Demo                                   |
+| ------- | --------------------------------------------- |
+| pathlib | https://myapollo.com.tw/zh-tw/python-pathlib/ |
 
 ## Conditions
 
-| Tricks                     | Simple Demo                                                        |
-| -------------------------- | ------------------------------------------------------------------ |
-| TODO: Ternary Conditionals | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=34s |
+| Tricks               | Simple Demo                                                        |
+| -------------------- | ------------------------------------------------------------------ |
+| Ternary Conditionals | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=34s |
 
 ## String
 
-| Tricks        | Simple Demo                                                                                                                              |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| TODO: fstring | https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/, https://www.youtube.com/watch?v=nghuHvKLhJA&list=LL&index=19 |
-| TODO: getpass | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1584s                                                                     |
+| Tricks  | Simple Demo                                                                                                                              |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| fstring | https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/, https://www.youtube.com/watch?v=nghuHvKLhJA&list=LL&index=19 |
+| getpass | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1584s                                                                     |
 
 ## Int
 
-| Tricks                        | Simple Demo                                                         |
-| ----------------------------- | ------------------------------------------------------------------- |
-| TODO: Underscore Placeholders | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=133s |
+| Tricks                  | Simple Demo                                                         |
+| ----------------------- | ------------------------------------------------------------------- |
+| Underscore Placeholders | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=133s |
 
 ## List
 
-| Tricks           | Simple Demo                                                                                                     |
-| ---------------- | --------------------------------------------------------------------------------------------------------------- |
-| TODO: enumerate  | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=410s, https://youtu.be/VBokjWj_cEA?list=LL&t=189 |
-| TODO: for...else | https://youtu.be/VBokjWj_cEA?list=LL&t=867                                                                      |
+| Tricks     | Simple Demo                                                                                                     |
+| ---------- | --------------------------------------------------------------------------------------------------------------- |
+| enumerate  | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=410s, https://youtu.be/VBokjWj_cEA?list=LL&t=189 |
+| for...else | https://youtu.be/VBokjWj_cEA?list=LL&t=867                                                                      |
 
 ## Set
 
-| Tricks                  | Simple Demo                                                                                                    |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
-| TODO: set for searching | https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009, https://youtu.be/r3R3h5ly_8g?t=1010 |
+| Tricks            | Simple Demo                                                                                                    |
+| ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| set for searching | https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009, https://youtu.be/r3R3h5ly_8g?t=1010 |
 
 ## Tuple
 
-| Tricks                                                       | Simple Demo                                |
-| ------------------------------------------------------------ | ------------------------------------------ |
-| TODO: unpacking https://youtu.be/C-gEQdGVXbk?list=LL&t=1033, | https://youtu.be/SNTZpy0oDB8?list=LL&t=795 |
-| TODO: swap                                                   | https://youtu.be/VBokjWj_cEA?list=LL&t=445 |
-| TODO: assign *variable                                       |                                            |
+| Tricks                                                 | Simple Demo                                |
+| ------------------------------------------------------ | ------------------------------------------ |
+| unpacking https://youtu.be/C-gEQdGVXbk?list=LL&t=1033, | https://youtu.be/SNTZpy0oDB8?list=LL&t=795 |
+| swap                                                   | https://youtu.be/VBokjWj_cEA?list=LL&t=445 |
+| assign *variable                                       |                                            |
 
 ## Dict
 
-| Tricks    | Simple Demo                                |
-| --------- | ------------------------------------------ |
-| TODO: get | https://youtu.be/VBokjWj_cEA?list=LL&t=726 |
+| Tricks | Simple Demo                                |
+| ------ | ------------------------------------------ |
+| get    | https://youtu.be/VBokjWj_cEA?list=LL&t=726 |
 
 ## Try
 
-| Tricks     | Simple Demo                                 |
-| ---------- | ------------------------------------------- |
-| TODO: TEEF | https://youtu.be/VBokjWj_cEA?list=LL&t=1331 |
+| Tricks | Simple Demo                                 |
+| ------ | ------------------------------------------- |
+| TEEF   | https://youtu.be/VBokjWj_cEA?list=LL&t=1331 |
 
 ## Design
 
-| Tricks            | Simple Demo                                                                                                             |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| TODO: annotation  | https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html                     |
-| TODO: typing,     | https://myapollo.com.tw/zh-tw/python-typing-module/                                                                     |
-| TODO: (...), pass | https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number |
-| TODO: absl        | https://www.jianshu.com/p/f84a5b8c1183                                                                                  |
+| Tricks      | Simple Demo                                                                                                             |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| annotation  | https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html                     |
+| typing,     | https://myapollo.com.tw/zh-tw/python-typing-module/                                                                     |
+| (...), pass | https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number |
+| absl        | https://www.jianshu.com/p/f84a5b8c1183                                                                                  |
 
 ## IPython
 
-| Tricks                   | Simple Demo |
-| ------------------------ | ----------- |
-| TODO: vscode python file |             |
-| TODO: timeit, time       |             |
-| TODO: memit              |             |
+| Tricks             | Simple Demo |
+| ------------------ | ----------- |
+| vscode python file |             |
+| timeit, time       |             |
+| memit              |             |
 
-## Other
+## TODOs
 
-TODO: numba          
-TODO: numpy          
-TODO: pandas         
-TODO: matplotlib     
-TODO: seaborn        
-TODO: sklearn        
-TODO: transformers   
-TODO: beautiful soup 
-TODO: requests       
-TODO: scrapy         
-TODO: selenium       
+Numba
+Numpy
+Pandas
+Matplotlib
+sklearn
+pytorch
+transformers
+tensorboard
+mlflow
+beautiful soup
+requests
+scrapy
+selenium
+streamlit
