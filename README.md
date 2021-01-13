@@ -55,49 +55,48 @@ All skills are base on the implementation of Python 3.
 </tr>
 </table>
 
-* [Table of contents](#table-of-contents)
-* [Must Know](#must-know)
-  * [List & Dict & Set Comprehensions](#list--dict--set-comprehensions)
-  * [Lambda Functions](#lambda-functions)
-  * [Map](#map)
-  * [Filter](#filter)
-  * [Zip](#zip)
-  * [Reduce](#reduce)
-  * [*args & **kwargs](#args--kwargs)
-  * [Generator (map, filter, zip)](#generator-map-filter-zip)
-  * [Closure & Decorator](#closure--decorator)
-  * [Context Manager](#context-manager)
-  * [Magic Method](#magic-method)
-  * [Metaclasses](#metaclasses)
-  * [Threading & Multiprocessing](#threading--multiprocessing)
-* [Classes](#classes)
-  * [self (class instance)](#self-class-instance)
-  * [variables (class & instance)](#variables-class--instance)
-  * [method vs. classmethod vs. staticmethod](#method-vs-classmethod-vs-staticmethod)
-  * [_ (private) vs. __ (name mangling)](#_-private-vs-__-name-mangling)
-  * [@property (getter, setter)](#property-getter-setter)
-  * [LEGB (local, enclosing, global, builtins)](#legb-local-enclosing-global-builtins)
-  * [Abstract class](#abstract-class)
-  * [Dataclasses](#dataclasses)
-  * [Classes in Dynamic Language](#classes-in-dynamic-language)
-* [Functions](#functions)
-  * [Enclosing function](#enclosing-function)
-  * [Attrs](#attrs)
-  * [Functions in Dynamic Language](#functions-in-dynamic-language)
-  * [Collections](#collections)
-  * [Itertools](#itertools)
-  * [os](#os)
-  * [Conditions](#conditions)
-  * [String](#string)
-  * [Int](#int)
-  * [List](#list)
-  * [Set](#set)
-  * [Tuple](#tuple)
-  * [Dict](#dict)
-  * [Try](#try)
-  * [Design](#design)
-  * [IPython](#ipython)
-  * [TODOs](#todos)
+<table>
+<tr><th>Collections</th><th>Itertools</th></tr>
+<tr>
+<td rowspan="3">
+<ul style="margin: 8px">
+<li><a href="#defaultdict">defaultdict</li>
+<li><a href="#ordereddict">OrderedDict</li>
+<li><a href="#counter">Counter</li>
+<li><a href="#namedtuple">namedtuple</li>
+<li><a href="#deque">deque</li>
+</ul>
+
+<td>
+<ul>
+<li><a href="#count">count</li>
+<li><a href="#cycle">cycle</li>
+<li><a href="#repeat">repeat</li>
+</ul>
+</td>
+<tr><td>
+<ul>
+<li><a href="#accumulate">accumulate</li>
+<li><a href="#chain">chain</li>
+<li><a href="#compress">compress</li>
+<li><a href="#filterfalse">filterfalse</li>
+<li><a href="#groupby">groupby</li>
+<li><a href="#islice">islice</li>
+<li><a href="#starmap">starmap</li>
+<li><a href="#takewhile">takewhile</li>
+<li><a href="#dropwhile">dropwhile</li>
+<li><a href="#zip_longest">zip_longest</li>
+</ul>
+</td></tr>
+<tr><td>
+<ul>
+<li><a href="#product">product</li>
+<li><a href="#permutations">permutations</li>
+<li><a href="#combinations">combinations</li>
+</ul>
+</td></tr>
+</tr>
+</table>
 
 # Must Know
 
@@ -508,35 +507,210 @@ def returnFunc(a):
         return add
 ```
 
-## Collections
+# Collections
 
-| Tricks                                    | Simple Demo                                                           |
-| ----------------------------------------- | --------------------------------------------------------------------- |
-| [defaultdict](collections/defaultdict.md) | [![](assets/collections/defaultdict.png)](collections/defaultdict.md) |
-| [OrderedDict](collections/ordereddict.md) | [![](assets/collections/ordereddict.png)](collections/ordereddict.md) |
-| [Counter](collections/counter.md)         | [![](assets/collections/counter.png)](collections/counter.md)         |
-| [namedtuple](collections/namedtuple.md)   | [![](assets/collections/namedtuple.png)](collections/namedtuple.md)   |
-| [deque](collections/deque.md)             | [![](assets/collections/deque.png)](collections/deque.md)             |
+## [defaultdict](collections/defaultdict.md) 
 
-## Itertools
+``` py
+from collections import defaultdict
 
-| Tricks                                    | Simple Demo                                 |
-| ----------------------------------------- | ------------------------------------------- |
-| Infinite iterators (count, cycle, repeat) |                                             |
-| accumulate                                |                                             |
-| chain                                     |                                             |
-| compress                                  |                                             |
-| filterfalse                               |                                             |
-| groupby                                   |                                             |
-| islice                                    |                                             |
-| starmap                                   |                                             |
-| takewhile                                 |                                             |
-| dropwhile                                 |                                             |
-| zip_longest                               |                                             |
-| product                                   |                                             |
-| permutations                              |                                             |
-| combinations                              |                                             |
-| Itertools                                 | https://www.youtube.com/watch?v=Qu3dThVy6KQ |
+d = defaultdict(list)
+d["a"] = [1, 2, 3]
+d["b"].append(4)
+d["c"].extend([5, 6])
+
+# defaultdict(<class 'list'>, {'a': [1, 2, 3], 'b': [4], 'c': [5, 6]})
+```
+
+## [OrderedDict](collections/ordereddict.md) 
+
+``` py
+from collections import OrderedDict
+
+location = ["C", "B", "A"]
+population = [32, 46, 12]
+
+d = OrderedDict({l: p for l, p in zip(location, population)})
+# OrderedDict([('C', 32), ('B', 46), ('A', 12)])
+
+d["D"] = 44
+# OrderedDict([('C', 32), ('B', 46), ('A', 12), ('D', 44)])
+
+d.popitem(last=False)
+# OrderedDict([('B', 46), ('A', 12), ('D', 44)])
+
+d.move_to_end("D", last=False)
+# OrderedDict ([( 'D', 44), ('B', 46), ('A', 12)])
+```
+
+## [Counter](collections/counter.md)         
+
+``` py
+from collections import Counter
+
+c = Counter(cats=4, dogs=8)
+# Counter({'dogs': 8, 'cats': 4})
+
+c.update(birds=10)
+# Counter({'birds': 10, 'dogs': 8, 'cats': 4})
+
+c = c - Counter({"birds": 5})
+# Counter({'dogs': 8, 'birds': 5, 'cats': 4})
+
+c.most_common(2)
+# [('dogs', 8), ('birds', 5)]
+```
+
+## [namedtuple](collections/namedtuple.md)   
+
+``` py
+from collections import namedtuple
+
+Dog = namedtuple("Dog", "name, age")
+d1 = Dog("funny", 4)
+
+features = ["happy", 3]
+d2 = Dog._make(features)
+# Dog(name='happy', age=3)
+
+d2._asdict()
+# OrderedDict([('name', 'happy'), ('age', 3)])
+```
+
+## [deque](collections/deque.md)             
+
+``` py
+from collections import deque
+
+li = [40, 30, 50, 46, 39, 44]
+d = deque(li[:2])
+
+# Let 's compute the moving average with range=3
+d.appendleft(0)
+s = sum(d)
+
+for elem in li[2:]:
+    s += elem - d.popleft()
+    d.append(elem)
+    print(s / 3)
+    # 40, 42, 45, 43
+```
+
+# Itertools
+
+## [Infinite iterators](itertools/infinite_iterators.md)
+
+### count
+
+``` py
+from itertools import count 
+
+gen = count(2.5, 0.5)
+
+for x in gen:
+    print(x)
+    # 2.5, 3.0, 3.5, 4.0, ... non-stop
+```
+
+### cycle
+
+``` py
+from itertools import cycle 
+
+gen = cycle([1, 2, 3])
+
+for x in gen:
+    print(x)
+    # 1, 2, 3, 1, 2, ... non-stop
+```
+
+### repeat
+
+``` py
+from itertools import repeat 
+
+class Cat:
+    ...
+    
+gen = repeat(Cat(), 2)
+
+for cat in gen:
+    print(cat)
+    # <__main__.Cat object at 0x0000019AC1C5D348>
+    # <__main__.Cat object at 0x0000019AC1C5D348>
+```
+
+## [Iterators terminating on the shortest input sequence](itertools/terminated_iterators.md)
+
+### accumulate
+
+``` py
+```
+
+### chain
+
+``` py
+```
+
+### compress
+
+``` py
+```
+
+### filterfalse
+
+``` py
+```
+
+### groupby
+
+``` py
+```
+
+### islice
+
+``` py
+```
+
+### starmap
+
+``` py
+```
+
+### takewhile
+
+``` py
+```
+
+### dropwhile
+
+``` py
+```
+
+### zip_longest
+
+``` py
+```
+
+## [Combinatoric iterators](itertools/combinatoric_iterators.md)
+
+### product
+
+
+``` py
+```
+
+### permutations
+
+
+``` py
+```
+
+### combinations
+
+
+``` py
+```
 
 ## os
 
@@ -615,17 +789,20 @@ def returnFunc(a):
 
 ## TODOs
 
-Numba
-Numpy
-Pandas
-Matplotlib
-sklearn
-pytorch
-transformers
-tensorboard
-mlflow
-beautiful soup
-requests
-scrapy
-selenium
-streamlit
+| TODOs          |
+| -------------- |
+| Numba          |
+| Numpy          |
+| Pandas         |
+| Matplotlib     |
+| sklearn        |
+| pytorch        |
+| transformers   |
+| tensorboard    |
+| mlflow         |
+| beautiful soup |
+| requests       |
+| scrapy         |
+| selenium       |
+| streamlit      |
+| flask          |
