@@ -2,7 +2,7 @@
 
 The `itertools` is a built-in module in Python 3 and is helpful for us to use a more pythonic way to manipulate the iterables (e.g., list, set, tuple, etc.). 
 
-Another advantage of `itertools` is it also returns the [generator](../must_know/generator.md) type instances that have benefits of **lazy evaluation** from all its methods.
+Another advantage of `itertools` is it also returns the [generator](../must_know/generator.md) type instances that have benefits of **lazy evaluation** from all of its methods.
 
 In this section, we will discuss the first part of `itertools`. The methods in this part all return a generator that generates an infinite number of items and won't stop.
 
@@ -19,9 +19,9 @@ In this section, we will discuss the first part of `itertools`. The methods in t
 
 This table takes [Python documentation #count](https://docs.python.org/3/library/itertools.html#itertools.count) as reference..
 
-| Arguments       | Results                             | Example                                |
-| --------------- | ----------------------------------- | -------------------------------------- |
-| start, [step=1] | start, start+step, start+2step, ... | `count(2.5, 0.5) = 2.5 3.0 3.5 4.0...` |
+| Arguments         | Results                             | Example                                |
+| ----------------- | ----------------------------------- | -------------------------------------- |
+| `start, [step=1]` | start, start+step, start+2step, ... | `count(2.5, 0.5) = 2.5 3.0 3.5 4.0...` |
 
 
 ``` py
@@ -40,7 +40,7 @@ This table takes [Python documentation #cycle](https://docs.python.org/3/library
 
 | Arguments      | Results                              | Example                            |
 | -------------- | ------------------------------------ | ---------------------------------- |
-| p (`iterable`) | p[0], p[1], ... p[-1], p[0], p[1]... | `cycle([1, 2, 3]) = 1 2 3 1 2 ...` |
+| `p (iterable)` | p[0], p[1], ... p[-1], p[0], p[1]... | `cycle([1, 2, 3]) = 1 2 3 1 2 ...` |
 
 ``` py
 from itertools import cycle 
@@ -56,9 +56,9 @@ for x in gen:
 
 This table takes [Python documentation #repeat](https://docs.python.org/3/library/itertools.html#itertools.repeat) as reference.
 
-| Arguments      | Results                                        | Example                           |
-| -------------- | ---------------------------------------------- | --------------------------------- |
-| item, [n=None] | item, item, item, … endlessly or up to n times | `repeat(Cat(), 2) = Cat(), Cat()` |
+| Arguments        | Results                                        | Example                           |
+| ---------------- | ---------------------------------------------- | --------------------------------- |
+| `item, [n=None]` | item, item, item, … endlessly or up to n times | `repeat(Cat(), 2) = Cat(), Cat()` |
 
 ``` py
 from itertools import repeat 

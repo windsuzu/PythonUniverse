@@ -2,7 +2,7 @@
 
 The `itertools` is a built-in module in Python 3 and is helpful for us to use a more pythonic way to manipulate the iterables (e.g., list, set, tuple, etc.). 
 
-Another advantage of `itertools` is it also returns the [generator](../must_know/generator.md) type instances that have benefits of **lazy evaluation** from all its methods.
+Another advantage of `itertools` is it also returns the [generator](../must_know/generator.md) type instances that have benefits of **lazy evaluation** from all of its methods.
 
 In this section, we will discuss the second part of `itertools`. The methods in this part all return a generator that generates finite items corresponding to your input.
 
@@ -28,9 +28,9 @@ In this section, we will discuss the second part of `itertools`. The methods in 
 
 This table takes [Python documentation #accumulate](https://docs.python.org/3/library/itertools.html#itertools.accumulate) as reference.
 
-| Arguments                             | Results                              | Example                           |
-| ------------------------------------- | ------------------------------------ | --------------------------------- |
-| p (`iterable`), [, func=operator.add] | p[0], p[0]+p[1], p[0]+p[1]+p[2], ... | `accumulate([1, 2, 3]) = 1, 3, 6` |
+| Arguments                           | Results                              | Example                           |
+| ----------------------------------- | ------------------------------------ | --------------------------------- |
+| `p (iterable), [func=operator.add]` | p[0], p[0]+p[1], p[0]+p[1]+p[2], ... | `accumulate([1, 2, 3]) = 1, 3, 6` |
 
 ``` py
 import operator
@@ -50,7 +50,7 @@ This table takes [Python documentation #chain](https://docs.python.org/3/library
 
 | Arguments          | Results                                      | Example                          |
 | ------------------ | -------------------------------------------- | -------------------------------- |
-| p, q (`iterables`) | p[0], p[1], ... p[-1], q[0], q[1], ... q[-1] | `chain("AB", "CD") = A, B, C, D` |
+| `p, q (iterables)` | p[0], p[1], ... p[-1], q[0], q[1], ... q[-1] | `chain("AB", "CD") = A, B, C, D` |
 
 ``` py
 from itertools import chain
@@ -69,7 +69,7 @@ This table takes [Python documentation #compress](https://docs.python.org/3/libr
 
 | Arguments                 | Results                             | Example                      |
 | ------------------------- | ----------------------------------- | ---------------------------- |
-| p, selector (`iterables`) | (p[0] if s[0]), (p[1] if s[1]), ... | `compress("AB", [0, 1]) = B` |
+| `p, selector (iterables)` | (p[0] if s[0]), (p[1] if s[1]), ... | `compress("AB", [0, 1]) = B` |
 
 ``` py
 from itertools import compress
@@ -88,7 +88,7 @@ This table takes [Python documentation #filterfalse](https://docs.python.org/3/l
 
 | Arguments            | Results      | Example                                           |
 | -------------------- | ------------ | ------------------------------------------------- |
-| pred, p (`iterable`) | p[i] != pred | `filterfalse(lambda x: x%2==0, [1, 2, 3]) = 1, 3` |
+| `pred, p (iterable)` | p[i] != pred | `filterfalse(lambda x: x%2==0, [1, 2, 3]) = 1, 3` |
 
 ``` py
 from itertools import filterfalse
@@ -108,7 +108,7 @@ This table takes [Python documentation #groupby](https://docs.python.org/3/libra
 
 | Arguments                       | Results                     | Tuples           | Example                                                        |
 | ------------------------------- | --------------------------- | ---------------- | -------------------------------------------------------------- |
-| p (`iterable`)[key=lambda x: x] | tuple1, tuple2, tuple3, ... | (key, generator) | `groupby("AABBCCCAA") = [(A, AA), (B, BB), (C, CCC), (A, AA)]` |
+| `p (iterable)[key=lambda x: x]` | tuple1, tuple2, tuple3, ... | (key, generator) | `groupby("AABBCCCAA") = [(A, AA), (B, BB), (C, CCC), (A, AA)]` |
 
 ``` py
 from itertools import groupby
@@ -144,7 +144,7 @@ This table takes [Python documentation #islice](https://docs.python.org/3/librar
 
 | Arguments                                       | Results                             | Example                             |
 | ----------------------------------------------- | ----------------------------------- | ----------------------------------- |
-| p (`iterable`), [start=None], stop, [step=None] | p[start:stop:step] but in generator | `islice("ABCD", 0, None, 2) = A, C` |
+| `p (iterable), [start=None], stop, [step=None]` | p[start:stop:step] but in generator | `islice("ABCD", 0, None, 2) = A, C` |
 
 ``` py
 gen = islice([1, 2, 3], 2)  # equals to A[:2]
@@ -167,7 +167,7 @@ This table takes [Python documentation #starmap](https://docs.python.org/3/libra
 
 | Arguments            | Results                       | Example                                  |
 | -------------------- | ----------------------------- | ---------------------------------------- |
-| func, p (`iterable`) | func(*p[0]), ..., func(p[-1]) | `starmap(pow, [(2, 3), (2, 4)]) = 8, 16` |
+| `func, p (iterable)` | func(*p[0]), ..., func(p[-1]) | `starmap(pow, [(2, 3), (2, 4)]) = 8, 16` |
 
 ``` py
 from itertools import starmap
@@ -193,7 +193,7 @@ This table takes [Python documentation #takewhile](https://docs.python.org/3/lib
 
 | Arguments            | Results                          | Example                                         |
 | -------------------- | -------------------------------- | ----------------------------------------------- |
-| pred, p (`iterable`) | p[0], p[1], ... until pred fails | `takewhile(lambda x: x<3, [1, 2, 3, 2]) = 1, 2` |
+| `pred, p (iterable)` | p[0], p[1], ... until pred fails | `takewhile(lambda x: x<3, [1, 2, 3, 2]) = 1, 2` |
 
 ``` py
 from itertools import takewhile
@@ -211,7 +211,7 @@ This table takes [Python documentation #dropwhile](https://docs.python.org/3/lib
 
 | Arguments            | Results                                     | Example                                         |
 | -------------------- | ------------------------------------------- | ----------------------------------------------- |
-| pred, p (`iterable`) | starting when pred fails, p[n], p[n+1], ... | `dropwhile(lambda x: x<3, [1, 2, 3, 2]) = 3, 2` |
+| `pred, p (iterable)` | starting when pred fails, p[n], p[n+1], ... | `dropwhile(lambda x: x<3, [1, 2, 3, 2]) = 3, 2` |
 
 ``` py
 gen = dropwhile(lambda x: x < 2, [1, 2, 3, 2, 1])
@@ -230,7 +230,7 @@ This table takes [Python documentation #zip_longest](https://docs.python.org/3/l
 
 | Arguments                            | Results                         | Example                                                              |
 | ------------------------------------ | ------------------------------- | -------------------------------------------------------------------- |
-| p, q (`iterables`), [fillvalue=None] | (p[0], q[0]), (p[1], q[1]), ... | `zip_longest("ABC", [1, 2], fillvalue=-1) = (A, 1), (B, 2), (C, -1)` |
+| `p, q (iterables), [fillvalue=None]` | (p[0], q[0]), (p[1], q[1]), ... | `zip_longest("ABC", [1, 2], fillvalue=-1) = (A, 1), (B, 2), (C, -1)` |
 
 ``` py
 from itertools import zip_longest

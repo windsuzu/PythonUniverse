@@ -35,7 +35,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#self-class-instance">self (class instance)</li>
 <li><a href="#variables-class--instance">variables (class & instance)</li>
 <li><a href="#method-vs-classmethod-vs-staticmethod">method vs. classmethod vs. staticmethod</li>
-<li><a href="#\_-private-vs-\__-name-mangling">_ (private) vs. __ (name mangling)</li>
+<li><a href="#private-vs-name-mangling">_ (private) vs. __ (name mangling)</li>
 <li><a href="#property-getter-setter">@property (getter, setter)</li>
 <li><a href="#legb-local-enclosing-global-builtins">LEGB (local, enclosing, global, builtins)</li>
 <li><a href="#abstract-class">Abstract class</li>
@@ -93,10 +93,13 @@ All skills are base on the implementation of Python 3.
 <li><a href="#product">product</li>
 <li><a href="#permutations">permutations</li>
 <li><a href="#combinations">combinations</li>
+<li><a href="#combinations_with_replacement">combinations_with_replacement</li>
 </ul>
 </td></tr>
 </tr>
 </table>
+
+
 
 # Must Know
 
@@ -793,23 +796,78 @@ list(gen)  # [('A', 1), ('B', 2), ('C', -1)]
 
 ### product
 
-
 ```py
+from itertools import product
 
+gen = product("AB", "CD")
+list(gen)  # [AC, AD, BC, BD]
+
+
+gen = product("AB", repeat=2)
+list(gen)  # [AA, AB, BA, BB]
+
+
+gen = product("AB", "CD", repeat=2)
+list(gen)
+# [ACAC, ACAD, ACBC, ACBD,
+#  ADAC, ADAD, ADBC, ADBD,
+#  BCAC, BCAD, BCBC, BCBD,
+#  BDAC, BDAD, BDBC, BDBD]
 ```
 
 ### permutations
 
-
 ```py
+gen = permutations("ABC") # same as r=3
+list(gen)  # [ABC, ACB, BAC, BCA, CAB, CBA]
 
+
+gen = permutations("ABC", r=2)
+list(gen)  # [AB, AC, BA, BC, CA, CB]
+
+
+gen = permutations("ABC", r=1)
+list(gen)  # [A, B, C]
 ```
 
 ### combinations
 
-
 ```py
+gen = combinations("ABC", 1)
+list(gen)
+# [A, B, C]
 
+
+gen = combinations("ABC", 2)
+list(gen)
+# [AB, AC, BC]
+
+
+gen = combinations("ABC", 3)
+list(gen)
+# [ABC]
+```
+
+### combinations_with_replacement
+
+``` py
+gen = combinations_with_replacement("ABC", 1)
+list(gen)
+# [A, B, C]
+
+
+gen = combinations_with_replacement("ABC", 2)
+list(gen)
+# [AA, AB, AC, 
+#  BB, BC, 
+#  CC]
+
+
+gen = combinations_with_replacement("ABC", 3)
+list(gen)
+# [AAA, AAB, AAC, ABB, ABC, ACC,
+#  BBB, BBC, BCC,
+#  CCC]
 ```
 
 ## os
