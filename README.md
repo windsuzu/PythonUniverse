@@ -645,51 +645,148 @@ for cat in gen:
 ### accumulate
 
 ``` py
+import operator
+from itertools import accumulate
+
+gen = accumulate([1, 2, 3, 4])
+list(gen)  # [1, 3, 6, 10]
+
+
+gen = accumulate([1, 2, 3, 4], func=operator.mul)
+list(gen)  # [1, 2, 6, 24]
 ```
 
 ### chain
 
-``` py
+```py
+from itertools import chain
+
+gen = chain([1, 2], [3, 4])
+list(gen)  # [1, 2, 3, 4]
+
+
+gen = chain("AB", "CD")
+list(gen)  # [A, B, C, D]
 ```
 
 ### compress
 
-``` py
+```py
+from itertools import compress
+
+gen = compress([1, 2, 3], [1, 0, 1])
+gen = compress([1, 2, 3], [True, False, True])  # same
+
+list(gen)  # [1, 3]
 ```
 
 ### filterfalse
 
-``` py
+```py
+from itertools import filterfalse
+
+gen = filterfalse(lambda x: x%2 == 0, [1, 2, 3])
+
+list(gen)  # [1, 3]
 ```
 
 ### groupby
 
-``` py
+```py
+from itertools import groupby
+
+gen = groupby("AABBCCCAA")  # default func = lambda x: x
+for k, g in gen:
+    print(k, list(g))
+    # A [A, A]
+    # B [B, B]
+    # C [C, C, C]
+    # A [A, A]
+
+
+gen = groupby([1, 2, 3, 4], lambda x: x // 3)
+for k, g in gen:
+    print(k, list(g))
+    # 0 [1, 2]
+    # 1 [3, 4]
+
+
+gen = groupby([("A", 100), ("B", 200), ("C", 600)], lambda x: x[1] > 500)
+for k, g in gen:
+    print(k, list(g))
+    # False [(A, 100), (B, 200)]
+    # True  [(C, 600)]
 ```
 
 ### islice
 
-``` py
+```py
+gen = islice([1, 2, 3], 2)  # equals to A[:2]
+list(gen)  # [1, 2]
+
+
+gen = islice("ABCD", 2, 4)  # equals to A[2:4]
+list(gen)  # [C, D]
+
+
+gen = islice("ABCD", 0, None, 2)  # equals to A[::2]
+list(gen)  # [A, C]
 ```
 
 ### starmap
 
-``` py
+```py
+from itertools import starmap
+
+# with only one argument
+gen = starmap(lambda x: x.lower(), "ABCD")
+list(gen)  # [a, b, c, d]
+
+
+# with 2 arguments
+gen = starmap(lambda x, y: x + y, [(1, 2), (3, 4)])
+list(gen)  # [3, 7]
+
+
+# with different size of arugments
+gen = starmap(lambda *keys: sum(keys) / len(keys), [[3, 8, 3], [4, 2]])
+list(gen)  # [4.6666667, 3.0]
 ```
 
 ### takewhile
 
-``` py
+```py
+from itertools import takewhile
+
+gen = takewhile(lambda x: x < 2, [1, 2, 3, 2, 1])
+list(gen)  # [1]
+
+gen = takewhile(lambda x: x.isupper(), "ABCdefgHIJ")
+list(gen)  # [A, B, C]
 ```
 
 ### dropwhile
 
-``` py
+```py
+gen = dropwhile(lambda x: x < 2, [1, 2, 3, 2, 1])
+list(gen)  # [2, 3, 2, 1]
+
+
+gen = dropwhile(lambda x: x.isupper(), "ABCdefgHIJ")
+list(gen)  # [d, e, f, g, H, I, J]
 ```
 
 ### zip_longest
 
-``` py
+```py
+from itertools import zip_longest
+
+gen = zip_longest("ABC", ("X", "Y"))
+list(gen)  # [('A', 'X'), ('B', 'Y'), ('C', None)]
+
+
+gen = zip_longest("ABC", [1, 2], fillvalue=-1)
+list(gen)  # [('A', 1), ('B', 2), ('C', -1)]
 ```
 
 ## [Combinatoric iterators](itertools/combinatoric_iterators.md)
@@ -697,19 +794,22 @@ for cat in gen:
 ### product
 
 
-``` py
+```py
+
 ```
 
 ### permutations
 
 
-``` py
+```py
+
 ```
 
 ### combinations
 
 
-``` py
+```py
+
 ```
 
 ## os
