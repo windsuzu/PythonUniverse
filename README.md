@@ -21,6 +21,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#zip">Zip</li>
 <li><a href="#reduce">Reduce</li>
 <li><a href="#args--kwargs">*args & **kwargs</li>
+<li><a href="#unpack-variables">Unpack variables</li>
 <li><a href="#generator-map-filter-zip">Generator (map, filter, zip)</li>
 <li><a href="#closure--decorator">Closure & Decorator</li>
 <li><a href="#context-manager">Context Manager</li>
@@ -35,7 +36,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#self-class-instance">self (class instance)</li>
 <li><a href="#variables-class--instance">variables (class & instance)</li>
 <li><a href="#method-vs-classmethod-vs-staticmethod">method vs. classmethod vs. staticmethod</li>
-<li><a href="#private-vs-name-mangling">_ (private) vs. __ (name mangling)</li>
+<li><a href="#\_-private-vs-\_\_-name-mangling">_ (private) vs. __ (name mangling)</li>
 <li><a href="#property-getter-setter">@property (getter, setter)</li>
 <li><a href="#legb-local-enclosing-global-builtins">LEGB (local, enclosing, global, builtins)</li>
 <li><a href="#abstract-class">Abstract class</li>
@@ -159,6 +160,8 @@ reduce(lambda x, y: x - y, [1, 2, 3, 4, 5], 100)  # 85
 
 ## [*args & **kwargs](must_know/arg_kwarg.md)
 
+### Defining Functions with *arg and **kwarg
+
 ``` py
 def example(a, *arg, b=0, **kwarg):
     print(a)     # 1
@@ -167,6 +170,64 @@ def example(a, *arg, b=0, **kwarg):
     print(kwarg) # {'x': 'a', 'y': [1, 2, 3]}
 
 example(1, 2, 3, b=1, x='a', y=[1, 2, 3])
+```
+
+### Calling Functions with *arg and **kwarg
+
+``` py
+def func(greet, time, name):
+    print(greet, time, name)
+
+func(*["Good", "Morning"], **{"name": "Jay"})
+# Good Morning Jay
+```
+
+## [Unpack Variables](must_know/unpack_variables.md)
+
+### Unpacking Iterable
+
+``` py
+a, b, *_ = [1, 2, 3, 4, 5]
+# 1, 2, [3, 4, 5]
+```
+
+### Unpacking Generator
+
+``` py
+first, *amid, last = map(lambda x: x**2, range(1, 10000))
+first  # 1
+last   # 99980001
+```
+
+### Unpacking in For-loop
+
+``` py
+sales = [("Pencil", 0.22, 1500), ("Notebook", 1.30, 550)]
+
+for product, *_ in sales:
+    print(product)
+    # Pencil, Notebook
+```
+
+### Unpacking Function
+
+``` py
+def compute(i):
+    return i, i ** 2, i ** 3, i ** 4, i ** 5
+
+num, power, cube, *_ = compute(3)
+power  # 9
+cube   # 27
+```
+
+### Combining Dicts
+
+``` py
+number = {"one": 1, "two": 2}
+letter = {"a": "A", "b": "B"}
+
+combine = {**number, **letter}
+combine  # {'one': 1, 'two': 2, 'a': 'A', 'b': 'B'}
 ```
 
 ## [Generator (map, filter, zip)](must_know/generator.md)
