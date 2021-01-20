@@ -57,7 +57,8 @@ All skills are base on the implementation of Python 3.
 </table>
 
 <table>
-<tr><th>Collections</th><th>Itertools</th></tr>
+<tr><th>Collections</th><th>Itertools</th><th>Functools</th></tr>
+
 <tr>
 <td rowspan="3">
 <ul style="margin: 8px">
@@ -67,16 +68,26 @@ All skills are base on the implementation of Python 3.
 <li><a href="#namedtuple">namedtuple</li>
 <li><a href="#deque">deque</li>
 </ul>
+</td>
 
-<td>
-<ul>
+<td rowspan="1">
+<ul style="margin: 8px">
 <li><a href="#count">count</li>
 <li><a href="#cycle">cycle</li>
 <li><a href="#repeat">repeat</li>
 </ul>
 </td>
-<tr><td>
-<ul>
+
+<td rowspan="3">
+<ul style="margin: 8px">
+<li><a href="#reduce">reduce</li>
+</ul>
+</td>
+
+</tr>
+<tr>
+<td rowspan="1">
+<ul style="margin: 8px">
 <li><a href="#accumulate">accumulate</li>
 <li><a href="#chain">chain</li>
 <li><a href="#compress">compress</li>
@@ -88,19 +99,59 @@ All skills are base on the implementation of Python 3.
 <li><a href="#dropwhile">dropwhile</li>
 <li><a href="#zip_longest">zip_longest</li>
 </ul>
-</td></tr>
-<tr><td>
-<ul>
+</td>
+</tr>
+
+<tr>
+<td rowspan="1">
+<ul style="margin: 8px">
 <li><a href="#product">product</li>
 <li><a href="#permutations">permutations</li>
 <li><a href="#combinations">combinations</li>
 <li><a href="#combinations_with_replacement">combinations_with_replacement</li>
 </ul>
-</td></tr>
+</td>
+</tr>
+
 </tr>
 </table>
 
+<table>
+<tr><th>String</th><th>Int</th><th>Set</th><th>Tuple</th></tr>
+<tr>
+<td><ul style="margin: 4px"><li><a href="#f-string">f-string</li></ul></td>
+<td><ul style="margin: 4px"><li><a href="#underscore-placeholders">Underscore Placeholders</li></ul></td>
+<td><ul style="margin: 4px"><li><a href="#search">Search</li></ul></td>
+<td><ul style="margin: 4px"><li><a href="#swap">Swap</li></ul></td>
+</tr>
 
+</table>
+
+<table>
+<tr><th>Conditional</th><th>For-Loop</th><th>Try-Except</th><th>Design</th><th>Ipython</th></tr>
+
+<td><ul style="margin: 8px"><li><a href="#ternary-operator">Ternary operator</li></ul></td>
+
+<td><ul style="margin: 8px">
+<li><a href="#enumerate">Enumerate</li>
+<li><a href="#for-else">For-Else</li>
+</ul></td>
+
+<td><ul style="margin: 8px"> <li><a href="#teef">TEEF</li></ul></td>
+
+<td><ul style="margin: 8px">
+<li><a href="#annotation">Annotation</li>
+<li><a href="#typing">Typing</li>
+<li><a href="#pass-and-triple-dots-">Pass and Triple Dots (...)</li>
+<li><a href="#absl">absl</li>
+</ul></td>
+
+<td><ul style="margin: 8px">
+<li><a href="#vscode-python-interactive-window">VSCode Python Interactive window</li>
+<li><a href="#time-measure">Time Measure</li>
+<li><a href="#memory-measure">Memory Measure</li>
+</ul></td>
+</table>
 
 # Must Know
 
@@ -149,13 +200,6 @@ b = [4, 5, 6]
 
 c = [*zip(a, b)]  # [(1, 4), (2, 5), (3, 6)]
 a, b = zip(*c)    # a=(1, 2, 3),  b=(4, 5, 6)
-```
-
-## [Reduce](must_know/reduce.md)
-
-``` py
-from functools import reduce
-reduce(lambda x, y: x - y, [1, 2, 3, 4, 5], 100)  # 85
 ```
 
 ## [*args & **kwargs](must_know/arg_kwarg.md)
@@ -931,80 +975,103 @@ list(gen)
 #  CCC]
 ```
 
-## os
+# Functools
 
-| Tricks  | Simple Demo                                   |
-| ------- | --------------------------------------------- |
-| pathlib | https://myapollo.com.tw/zh-tw/python-pathlib/ |
+## [Reduce](functools/reduce.md)
 
-## Conditions
+``` py
+from functools import reduce
 
-| Tricks               | Simple Demo                                                        |
-| -------------------- | ------------------------------------------------------------------ |
-| Ternary Conditionals | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=34s |
+reduce(lambda x, y: x - y, [1, 2, 3, 4, 5], 100)  # 85
+```
 
-## String
+# String
 
-| Tricks  | Simple Demo                                                                                                                              |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| fstring | https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/, https://www.youtube.com/watch?v=nghuHvKLhJA&list=LL&index=19 |
-| getpass | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=1584s                                                                     |
+## f-string
 
-## Int
+https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/
+https://www.youtube.com/watch?v=nghuHvKLhJA&list=LL&index=19
 
-| Tricks                  | Simple Demo                                                         |
-| ----------------------- | ------------------------------------------------------------------- |
-| Underscore Placeholders | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=133s |
+# Int
 
-## List
+## Underscore Placeholders
 
-| Tricks     | Simple Demo                                                                                                     |
-| ---------- | --------------------------------------------------------------------------------------------------------------- |
-| enumerate  | https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=410s, https://youtu.be/VBokjWj_cEA?list=LL&t=189 |
-| for...else | https://youtu.be/VBokjWj_cEA?list=LL&t=867                                                                      |
+https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=133s
 
-## Set
+# Set
 
-| Tricks            | Simple Demo                                                                                                    |
-| ----------------- | -------------------------------------------------------------------------------------------------------------- |
-| set for searching | https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009, https://youtu.be/r3R3h5ly_8g?t=1010 |
+## Search
 
-## Tuple
+https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009
+https://youtu.be/r3R3h5ly_8g?t=1010
 
-| Tricks                                                 | Simple Demo                                |
-| ------------------------------------------------------ | ------------------------------------------ |
-| unpacking https://youtu.be/C-gEQdGVXbk?list=LL&t=1033, | https://youtu.be/SNTZpy0oDB8?list=LL&t=795 |
-| swap                                                   | https://youtu.be/VBokjWj_cEA?list=LL&t=445 |
-| assign *variable                                       |                                            |
+# Tuple
 
-## Dict
+## Swap
 
-| Tricks | Simple Demo                                |
-| ------ | ------------------------------------------ |
-| get    | https://youtu.be/VBokjWj_cEA?list=LL&t=726 |
+https://youtu.be/VBokjWj_cEA?list=LL&t=445
 
-## Try
+# Condition
 
-| Tricks | Simple Demo                                 |
-| ------ | ------------------------------------------- |
-| TEEF   | https://youtu.be/VBokjWj_cEA?list=LL&t=1331 |
+## Ternary operator
 
-## Design
+https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=34s |
 
-| Tricks      | Simple Demo                                                                                                             |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| annotation  | https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html                     |
-| typing,     | https://myapollo.com.tw/zh-tw/python-typing-module/                                                                     |
-| (...), pass | https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number |
-| absl        | https://www.jianshu.com/p/f84a5b8c1183                                                                                  |
+# For-Loop
 
-## IPython
+## Enumerate
 
-| Tricks             | Simple Demo |
-| ------------------ | ----------- |
-| vscode python file |             |
-| timeit, time       |             |
-| memit              |             |
+https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=410s
+https://youtu.be/VBokjWj_cEA?list=LL&t=189
+
+## For-Else
+
+https://youtu.be/VBokjWj_cEA?list=LL&t=867
+
+
+# Try-Except
+
+## TEEF
+https://youtu.be/VBokjWj_cEA?list=LL&t=1331
+
+# Design
+
+## Annotation
+
+https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html
+
+## Typing
+
+https://myapollo.com.tw/zh-tw/python-typing-module/
+
+## Pass and Triple Dots (...)
+
+https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number
+
+## absl
+
+https://www.jianshu.com/p/f84a5b8c1183
+
+# IPython
+
+## VSCode Python Interactive window
+
+https://code.visualstudio.com/docs/python/jupyter-support-py
+
+## Time Measure
+
+https://stackoverflow.com/questions/17579357/time-time-vs-timeit-timeit
+https://blog.csdn.net/shuibuzhaodeshiren/article/details/86650688
+
+## Memory Measure
+
+https://pypi.org/project/memory-profiler/
+https://ipython-books.github.io/44-profiling-the-memory-usage-of-your-code-with-memory_profiler/
+
+# pathlib
+
+https://myapollo.com.tw/zh-tw/python-pathlib/
+
 
 ## TODOs
 
@@ -1013,6 +1080,8 @@ list(gen)
 | Numba          |
 | Numpy          |
 | Pandas         |
+| Pandas-UI      |
+| Sweetviz       |
 | Matplotlib     |
 | sklearn        |
 | pytorch        |
