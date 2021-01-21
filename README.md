@@ -119,10 +119,10 @@ All skills are base on the implementation of Python 3.
 <table>
 <tr><th>String</th><th>Int</th><th>Set</th><th>Tuple</th></tr>
 <tr>
-<td><ul style="margin: 4px"><li><a href="#f-string">f-string</li></ul></td>
-<td><ul style="margin: 4px"><li><a href="#underscore-placeholders">Underscore Placeholders</li></ul></td>
-<td><ul style="margin: 4px"><li><a href="#search">Search</li></ul></td>
-<td><ul style="margin: 4px"><li><a href="#swap">Swap</li></ul></td>
+<td><ul style="margin: 8px"><li><a href="#f-string">f-string</li></ul></td>
+<td><ul style="margin: 8px"><li><a href="#underscore-placeholders">Underscore Placeholders</li></ul></td>
+<td><ul style="margin: 8px"><li><a href="#search">Search</li></ul></td>
+<td><ul style="margin: 8px"><li><a href="#swap">Swap</li></ul></td>
 </tr>
 
 </table>
@@ -142,8 +142,7 @@ All skills are base on the implementation of Python 3.
 <td><ul style="margin: 8px">
 <li><a href="#annotation">Annotation</li>
 <li><a href="#typing">Typing</li>
-<li><a href="#pass-and-triple-dots-">Pass and Triple Dots (...)</li>
-<li><a href="#absl">absl</li>
+<li><a href="#pass-and-ellipsis">Pass and Ellipsis</li>
 </ul></td>
 
 <td><ul style="margin: 8px">
@@ -989,91 +988,330 @@ reduce(lambda x, y: x - y, [1, 2, 3, 4, 5], 100)  # 85
 
 ## f-string
 
-https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/
-https://www.youtube.com/watch?v=nghuHvKLhJA&list=LL&index=19
+``` py
+first_name = "Kain"
+last_name = "Mccarthy"
+print(f"Hi, I'm {first_name} {last_name}.")  # Hi, I'm Kain Mccarthy.
+
+
+pi = 3.14159265359
+print(f"{pi:.2f}")  # 3.14
+
+
+d = {"name": "Shelly"}
+print(f"She is {d['name']}")  # She is Shelly
+
+
+i = 1000000
+print(f"{i:,}")  # 1,000,000
+
+
+# Ref:
+#   * https://youtu.be/nghuHvKLhJA
+#   * https://blog.louie.lu/2017/08/08/outdate-python-string-format-and-fstring/
+```
 
 # Int
 
 ## Underscore Placeholders
 
-https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=133s
+``` py
+a = 100_000_000
+b =  10_000_000
+c =  1_0_0
+
+print(f"{a+b+c:,}")  # 110,000,100
+
+
+# Ref:
+#   * https://youtu.be/C-gEQdGVXbk&t=140
+```
 
 # Set
 
 ## Search
 
-https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009
-https://youtu.be/r3R3h5ly_8g?t=1010
+``` py
+long_list = [i for i in range(100_000_000)]
+long_set = set(long_list)
+
+%%time
+100_000_000 in long_list
+# False
+# Wall time: 1.26 s
+
+
+%%time
+100_000_000 in long_set
+# False
+# Wall time: 0 ns
+
+
+# Ref:
+#   * https://stackoverflow.com/questions/2831212/python-sets-vs-lists/17945009
+#   * https://youtu.be/r3R3h5ly_8g?t=1010
+```
 
 # Tuple
 
 ## Swap
 
-https://youtu.be/VBokjWj_cEA?list=LL&t=445
+``` py
+a, b = 1, 2
+a  # 1
+b  # 2
+
+a, b = b, a
+a  # 2
+b  # 1
+
+
+# Ref:
+#   * https://youtu.be/VBokjWj_cEA?list=LL&t=445
+```
 
 # Condition
 
 ## Ternary operator
 
-https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=34s |
+``` py
+if x < 1:
+    x += 1
+else:
+    x -= 1
+
+# equivalent to:
+
+x = (x + 1) if (x < 1) else (x - 1)
+
+
+# Ref:
+#   * https://www.youtube.com/watch?v=C-gEQdGVXbk&t=34s
+```
 
 # For-Loop
 
 ## Enumerate
 
-https://www.youtube.com/watch?v=C-gEQdGVXbk&list=LL&index=24&t=410s
-https://youtu.be/VBokjWj_cEA?list=LL&t=189
+``` py
+arr = ["a", "b", "c"]
+
+for index, element in enumerate(arr):
+    print(index, element)
+    # 0 a
+    # 1 b
+    # 2 c
+
+for index, element in enumerate(arr, start=3):
+    print(index, element)
+    # 3 a
+    # 4 b
+    # 5 c
+
+
+# Ref
+#   * https://youtu.be/VBokjWj_cEA?list=LL&t=190
+```
 
 ## For-Else
 
-https://youtu.be/VBokjWj_cEA?list=LL&t=867
+``` py
+for text in "to be or not to be".split():
+    if text.strip().startswith("o"):
+        print(f"Found it! `{text}`")
+        break
+else:
+    print("Not found")
 
+# Found it! `or`
+
+
+# Ref:
+#   * https://www.youtube.com/watch?v=Dh-0lAyc3Bc
+```
 
 # Try-Except
 
 ## TEEF
-https://youtu.be/VBokjWj_cEA?list=LL&t=1331
+
+``` py
+try:
+    print(1/1)
+except Exception as e:
+    print(e)
+else:
+    print("Safe")  # executed when except didn't happen
+finally:
+    print("Done")  # Always executed
+
+# 1.0
+# Safe
+# Done
+
+
+# Ref:
+#   * https://youtu.be/VBokjWj_cEA?list=LL&t=1331
+```
 
 # Design
 
 ## Annotation
 
-https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html
+``` py
+def func(a: str, b: int = 3) -> str:
+    return a*b
+
+func.__annotations__  # {'a': <class 'str'>, 'b': <class 'int'>, 'return': <class 'str'>}
+
+func("hi")     # hihihi
+func("hi", 5)  # hihihihihi
+```
+
+``` py
+def func(a: "str longer than 5", b: 1+2 = 3) -> "str longer b times":
+    return a*b
+
+func.__annotations__  # {'a': 'str longer than 5', 'b': 3, 'return': 'str longer b times'}
+
+func("hi")         # hihihi
+func("ohayou", 2)  # ohayouohayou
+```
+
+#### Ref
+
+* https://mozillazg.com/2016/01/python-function-argument-type-check-base-on-function-annotations.html
 
 ## Typing
 
-https://myapollo.com.tw/zh-tw/python-typing-module/
+``` py
+from typing import Any, Dict, Iterable, List, Union
 
-## Pass and Triple Dots (...)
 
-https://stackoverflow.com/questions/42190783/what-does-three-dots-in-python-mean-when-indexing-what-looks-like-a-number
+def func(a: List[int], b: Union[str, int], c: Dict[str, int], d: Iterable, e: Any):
+    print(len(a))
+    
+    print(f"{b} can be str or int.")
+    
+    print(f"{c['something']} will return int.")
+    
+    for i in d:
+        print(i)
+        
+    print(f"{type(e)} can be any type.")
 
-## absl
 
-https://www.jianshu.com/p/f84a5b8c1183
+# Ref:
+#   * https://myapollo.com.tw/zh-tw/python-typing-module/
+```
+
+## Pass and Ellipsis
+
+``` py
+# Style 1
+def my_abstract_method(self):
+    pass
+
+# Style 2
+def my_abstract_method(self):
+    ...
+
+# Style 3
+def my_abstract_method(self):
+    """
+    This function is ...
+    """
+
+# Ref:
+#   * https://stackoverflow.com/questions/55274977/when-is-the-usage-of-the-python-ellipsis-to-be-preferred-over-pass
+#   * https://stackoverflow.com/questions/772124/what-does-the-ellipsis-object-do
+```
 
 # IPython
 
 ## VSCode Python Interactive window
 
-https://code.visualstudio.com/docs/python/jupyter-support-py
+``` py
+#%%
+1+1
+# 2
+
+
+# Ref:
+#   * https://code.visualstudio.com/docs/python/jupyter-support-py
+```
 
 ## Time Measure
 
-https://stackoverflow.com/questions/17579357/time-time-vs-timeit-timeit
-https://blog.csdn.net/shuibuzhaodeshiren/article/details/86650688
+### One Line
+
+``` py
+%time sleep(0.3)  
+# Wall time: 310 ms
+
+%timeit sleep(0.3)
+# 311 ms ± 2.06 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+```
+
+### Multiple Lines
+
+``` py
+%%time
+for i in range(10):
+    sleep(0.1)
+# Wall time: 1.09 s
+
+
+%%timeit
+for i in range(10):
+    sleep(0.1)
+# 1.09 s ± 2.07 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+```
+
+#### Ref
+
+* https://stackoverflow.com/questions/17579357/time-time-vs-timeit-timeit
+* https://blog.csdn.net/shuibuzhaodeshiren/article/details/86650688
+
 
 ## Memory Measure
 
-https://pypi.org/project/memory-profiler/
-https://ipython-books.github.io/44-profiling-the-memory-usage-of-your-code-with-memory_profiler/
+### Installation
+
+``` py
+!pip install -U memory_profiler
+
+%load_ext memory_profiler
+```
+
+### One Line
+
+``` py
+%memit [i for i in range(1000)]
+
+# peak memory: 51.31 MiB, increment: 0.36 MiB
+```
+
+### Multiple Lines
+
+``` py
+%%memit
+l = []
+for x in range(10000):
+    l.append(x*2)
+
+# peak memory: 52.76 MiB, increment: 0.70 MiB
+```
+
+#### Ref
+
+* https://pypi.org/project/memory-profiler/
+* https://ipython-books.github.io/44-profiling-the-memory-usage-of-your-code-with-memory_profiler/
 
 # pathlib
 
 https://myapollo.com.tw/zh-tw/python-pathlib/
 
-
-## TODOs
+# TODOs
 
 | TODOs          |
 | -------------- |
