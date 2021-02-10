@@ -152,6 +152,16 @@ All skills are base on the implementation of Python 3.
 </ul></td>
 </table>
 
+<table>
+<tr><th>Module</th></tr>
+<td><ul style="margin: 8px">
+<li><a href="#pathlib">pathlib</li>
+</ul>
+</td>
+</table>
+
+
+
 # Must Know
 
 ## [List & Dict & Set Comprehensions](must_know/list_dict_set_comprehensions.md)
@@ -1307,9 +1317,24 @@ for x in range(10000):
 * https://pypi.org/project/memory-profiler/
 * https://ipython-books.github.io/44-profiling-the-memory-usage-of-your-code-with-memory_profiler/
 
-# pathlib
+# Modules
 
-https://myapollo.com.tw/zh-tw/python-pathlib/
+## [pathlib](modules/pathlib.ipynb)
+
+``` py
+sub_folder = Path("subfolder/subfolder")
+sub_folder.mkdir(parents=True, exist_ok=True)
+
+file_ = sub_folder / Path("test.txt")
+file_.touch()
+
+file_.write_text("Hello")
+file_.read_text()
+
+file_.unlink()
+Path("subfolder/subfolder").rmdir()
+```
+
 
 # TODOs
 
