@@ -160,7 +160,12 @@ All skills are base on the implementation of Python 3.
 </td>
 </table>
 
-
+<table>
+<tr><th>Numpy</th></tr>
+<td><ul style="margin: 8px">
+<li><a href="#create-array-or-matrix">Create Array or Matrix</li>
+</ul>
+</table>
 
 # Must Know
 
@@ -1335,13 +1340,40 @@ file_.unlink()
 Path("subfolder/subfolder").rmdir()
 ```
 
+# Numpy
+
+## [Create Array or Matrix](numpy/create_array_matrix.ipynb)
+
+``` py
+import numpy as np
+
+np.array([[1, 2], [3, 4], [5, 6]])  # create from list
+
+np.zeros((3, 3))  # create filled with 0's
+
+np.ones((2, 4, 4))  # create filled with 1's
+
+np.empty((5, 2))  # create with speed
+
+np.arange(2, 10, 3)  # create array from range (start, end, step_size)
+
+np.linspace(5, 50, 20)  # create a linear space (start, end, num_elements)
+
+# create from random generator
+rng = np.random.default_rng(seed=42)
+
+rng.random((2, 4))
+
+rng.normal(3, 2.5, size=(2, 4))  # sample from N(3, 6.25)
+
+rng.integers(low=2, high=10, size=(10, 2))  # random integer matrix
+```
 
 # TODOs
 
 | TODOs          |
 | -------------- |
 | Numba          |
-| Numpy          |
 | Pandas         |
 | Pandas-UI      |
 | Sweetviz       |
