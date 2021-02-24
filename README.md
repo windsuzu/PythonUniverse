@@ -164,6 +164,7 @@ All skills are base on the implementation of Python 3.
 <tr><th>Numpy</th></tr>
 <td><ul style="margin: 8px">
 <li><a href="#create-array-or-matrix">Create Array or Matrix</li>
+<li><a href="#basic-operations">Basic Operations</li>
 </ul>
 </table>
 
@@ -1368,6 +1369,63 @@ rng.normal(3, 2.5, size=(2, 4))  # sample from N(3, 6.25)
 
 rng.integers(low=2, high=10, size=(10, 2))  # random integer matrix
 ```
+
+## [Basic Operations](numpy/basic_operations.ipynb)
+
+### Element-wise
+
+``` py
+a = np.arange(5)           # [0, 1, 2, 3, 4]
+b = np.ones(5, dtype=int)  # [1, 1, 1, 1, 1]
+
+a + b       # [1 2 3 4 5]
+a - b       # [-1  0  1  2  3]
+a ^ 2       # [ 0  1  4  9 16]
+a * 10      # [ 0 10 20 30 40]
+a > 2       # [False False False  True  True]
+np.sqrt(a)  # [0. , 1.  , 1.41421356, 1.73205081, 2. ]
+a*b  # [0 1 2 3 4]
+a@b  # 10
+```
+
+### All (None) Column-wise (0), Row-wise (1)
+
+``` py
+A = np.random.default_rng(42).random((2, 4))
+# [[0.77395605, 0.43887844, 0.85859792, 0.69736803],
+#  [0.09417735, 0.97562235, 0.7611397 , 0.78606431]])
+
+A.max()        # 0.97562235
+A.max(axis=0)  # [0.77395605, 0.97562235, 0.85859792, 0.78606431]
+A.max(axis=1)  # [0.85859792, 0.97562235]
+
+A.mean()        # 0.6732255180088094
+A.mean(axis=0)  # [0.4340667 , 0.7072504 , 0.80986881, 0.74171617]
+A.mean(axis=1)  # [0.69220011, 0.65425093]
+```
+
+## Indexing, Slicing, and Iterating
+
+https://numpy.org/doc/stable/user/quickstart.html#indexing-slicing-and-iterating
+https://numpy.org/doc/stable/user/quickstart.html#advanced-indexing-and-index-tricks
+https://numpy.org/doc/stable/user/basics.indexing.html
+
+## Shape Manipulation
+
+https://numpy.org/doc/stable/user/quickstart.html#shape-manipulation
+https://numpy.org/doc/stable/user/quickstart.html#automatic-reshaping
+https://numpy.org/doc/stable/user/quickstart.html#vector-stacking
+
+## Copying
+
+https://numpy.org/doc/stable/user/quickstart.html#copies-and-views
+
+## Broadcasting
+
+https://numpy.org/doc/stable/user/quickstart.html#less-basic
+https://numpy.org/doc/stable/user/basics.broadcasting.html
+
+
 
 # TODOs
 
