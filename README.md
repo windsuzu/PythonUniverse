@@ -165,6 +165,8 @@ All skills are base on the implementation of Python 3.
 <td><ul style="margin: 8px">
 <li><a href="#create-array-or-matrix">Create Array or Matrix</li>
 <li><a href="#basic-operations">Basic Operations</li>
+<li><a href="#indexing-and-slicing">Indexing and Slicing</li>
+
 </ul>
 </table>
 
@@ -1372,6 +1374,18 @@ rng.integers(low=2, high=10, size=(10, 2))  # random integer matrix
 
 ## [Basic Operations](numpy/basic_operations.ipynb)
 
+### Sort and Concatenate
+
+``` py
+np.sort(a, axis=None)
+np.sort(a, axis=-1)[::-1]
+a.sort()
+a[::-1].sort()
+
+np.concatenate((a, b), axis=None)
+np.concatenate((a, b), axis=2)
+```
+
 ### Element-wise
 
 ``` py
@@ -1404,11 +1418,31 @@ A.mean(axis=0)  # [0.4340667 , 0.7072504 , 0.80986881, 0.74171617]
 A.mean(axis=1)  # [0.69220011, 0.65425093]
 ```
 
-## Indexing, Slicing, and Iterating
+## [Indexing and Slicing](numpy/indexing_slicing.ipynb)
 
-https://numpy.org/doc/stable/user/quickstart.html#indexing-slicing-and-iterating
-https://numpy.org/doc/stable/user/quickstart.html#advanced-indexing-and-index-tricks
-https://numpy.org/doc/stable/user/basics.indexing.html
+``` py
+# Index and slicing arrays
+x[1, 3] == x[1][3]
+y[1:5:2, ::3]
+
+
+# Indexing arrays
+x[np.array([0, 1, 2, -1, -2])]
+y[np.array([1, 2, 3]), 1:4:2]
+y[np.array([1, 2]), np.array([-1, -1])]
+
+
+# Masking arrays
+x[x>5]
+x[(x%2==0) | (x>7)]
+y[[True]*3 + [False] + [True] + [False], 2::2]
+
+
+# Ellipsis syntax
+x[-1, ..., 3]  # same as x[-1, :, 3]
+x[:3, ...]  # same as x[0:3, :, :] and x[0:3] and x[:3]
+x[::2, ..., np.array([0, 2])]  # same as x[0:5:2, :, np.array([0, 2])]
+```
 
 ## Shape Manipulation
 
