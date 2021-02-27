@@ -1444,11 +1444,23 @@ x[:3, ...]  # same as x[0:3, :, :] and x[0:3] and x[:3]
 x[::2, ..., np.array([0, 2])]  # same as x[0:5:2, :, np.array([0, 2])]
 ```
 
-## Shape Manipulation
+## [Shape Manipulation](numpy/shape_manipulation.ipynb)
 
-https://numpy.org/doc/stable/user/quickstart.html#shape-manipulation
-https://numpy.org/doc/stable/user/quickstart.html#automatic-reshaping
-https://numpy.org/doc/stable/user/quickstart.html#vector-stacking
+``` py
+A = np.array([[[1, 2, 3], [4, 5, 6]], [[4, 6, 8], [2, 1, 6]]])
+
+A.shape  # (2, 2, 3)
+
+A = A.reshape(3, 2, 2)  # (3, 2, 2)
+
+A = A[np.newaxis, ...]  # (1, 3, 2, 2)
+
+A = np.expand_dims(A, axis=4)  # (1, 3, 2, 2, 1)
+
+A = A.flatten()  # (12,)
+
+A = A.reshape(2, -1, 2)  # (2, 3, 2)
+```
 
 ## Copying
 
