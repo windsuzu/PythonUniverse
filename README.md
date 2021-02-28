@@ -166,7 +166,8 @@ All skills are base on the implementation of Python 3.
 <li><a href="#create-array-or-matrix">Create Array or Matrix</li>
 <li><a href="#basic-operations">Basic Operations</li>
 <li><a href="#indexing-and-slicing">Indexing and Slicing</li>
-
+<li><a href="#shape-manipulation">Shape Manipulation</li>
+<li><a href="#copying">Copying</li>
 </ul>
 </table>
 
@@ -1348,8 +1349,6 @@ Path("subfolder/subfolder").rmdir()
 ## [Create Array or Matrix](numpy/create_array_matrix.ipynb)
 
 ``` py
-import numpy as np
-
 np.array([[1, 2], [3, 4], [5, 6]])  # create from list
 
 np.zeros((3, 3))  # create filled with 0's
@@ -1462,16 +1461,25 @@ A = A.flatten()  # (12,)
 A = A.reshape(2, -1, 2)  # (2, 3, 2)
 ```
 
-## Copying
+## [Copying](numpy/copying.ipynb)
 
-https://numpy.org/doc/stable/user/quickstart.html#copies-and-views
+``` py
+# shallow copy: values will change on every variable
+a = np.arange(10).reshape(5, 2)
+b = a.view()
+c = a.reshape(-1)
+d = a[:3, :1]
+
+# deep copy: copy and create a complete new array
+a = np.arange(10000000)
+b = a[:100].copy()
+del a
+```
 
 ## Broadcasting
 
 https://numpy.org/doc/stable/user/quickstart.html#less-basic
 https://numpy.org/doc/stable/user/basics.broadcasting.html
-
-
 
 # TODOs
 
