@@ -168,6 +168,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#indexing-and-slicing">Indexing and Slicing</li>
 <li><a href="#shape-manipulation">Shape Manipulation</li>
 <li><a href="#copying">Copying</li>
+<li><a href="#broadcasting">Broadcasting</li>
 </ul>
 </table>
 
@@ -1470,16 +1471,38 @@ b = a.view()
 c = a.reshape(-1)
 d = a[:3, :1]
 
-# deep copy: copy and create a complete new array
+
+# deep copy: copy and create an entirely new array
 a = np.arange(10000000)
 b = a[:100].copy()
 del a
 ```
 
-## Broadcasting
+## [Broadcasting](numpy/broadcasting.ipynb)
 
-https://numpy.org/doc/stable/user/quickstart.html#less-basic
-https://numpy.org/doc/stable/user/basics.broadcasting.html
+``` py
+# scalar broadcasting
+a = np.array([1, 2, 3])
+a * 3  # [3, 6, 9]
+
+
+# general broadcasting
+a =  np.ones( (8, 1, 6, 1))
+b = np.zeros(    (7, 1, 5))
+(a*b).shape  # 8, 7, 6, 5
+
+
+# outer product
+a = np.arange(4)[:, np.newaxis]  # (4, 1)
+b = np.array([1, 2, 3])  # (3,)
+
+a + b  # (4, 3)
+
+# [0]  + [1, 2, 3] =  [1 2 3]
+# [1]                 [2 3 4]
+# [2]                 [3 4 5]
+# [3]                 [4 5 6]
+```
 
 # TODOs
 
