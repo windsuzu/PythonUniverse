@@ -161,7 +161,7 @@ All skills are base on the implementation of Python 3.
 </table>
 
 <table>
-<tr><th>Numpy</th></tr>
+<tr><th>Numpy</th><th>Pandas</th></tr>
 <td><ul style="margin: 8px">
 <li><a href="#create-array-or-matrix">Create Array or Matrix</li>
 <li><a href="#basic-operations">Basic Operations</li>
@@ -169,7 +169,11 @@ All skills are base on the implementation of Python 3.
 <li><a href="#shape-manipulation">Shape Manipulation</li>
 <li><a href="#copying">Copying</li>
 <li><a href="#broadcasting">Broadcasting</li>
-</ul>
+</ul></td>
+
+<td><ul style="margin: 8px">
+123
+</ul></td>
 </table>
 
 # Must Know
@@ -1504,12 +1508,30 @@ a + b  # (4, 3)
 # [3]                 [4 5 6]
 ```
 
+# Pandas
+
+https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
+https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html
+
+## Creation, Viewing
+
+``` py
+
+```
+
+## Selection
+
+## Missing Data
+
+## Operation, Merge
+
+## Grouping, Reshaping
+
 # TODOs
 
 | TODOs          |
 | -------------- |
 | Numba          |
-| Pandas         |
 | Pandas-UI      |
 | Sweetviz       |
 | Matplotlib     |
