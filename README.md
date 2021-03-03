@@ -172,7 +172,7 @@ All skills are base on the implementation of Python 3.
 </ul></td>
 
 <td><ul style="margin: 8px">
-123
+<li><a href="#creation-and-viewing">Creation and Viewing</li>
 </ul></td>
 </table>
 
@@ -1510,13 +1510,48 @@ a + b  # (4, 3)
 
 # Pandas
 
-https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
-https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html
-
-## Creation, Viewing
+## [Creation and Viewing](pandas/creation_viewing.ipynb)
 
 ``` py
+# Create Series
+pd.Series([1, 2, 3, 4, 5])
+pd.Series(np.arange(1, 6), index=list("abcde"))
+pd.Series({"a": 100, "b": 50, "c": 120})
+pd.Series("hi", index=list("12345"))
 
+
+# Create DataFrame
+pd.DataFrame({
+    "col_1": [1, 2, 3, 4, 5],
+    "col_2": np.arange(1, 6),
+    "col_3": pd.Series(np.arange(1, 7), index=list("abc123")),
+}, index=list("abcde"))
+
+pd.DataFrame(
+    [
+        {"a": 1, "b": 2},
+        {"b": 10, "c": 5},
+        {"a": 55, "b": 489, "c": 32, "d": 590},
+    ],
+    index=["first", "second", "third"],
+    columns=list("ab")
+)
+
+pd.DataFrame(
+    np.arange(10).reshape(2, 5),
+    # [[0,1,2,3,4], [5,6,7,8,9]]
+    index=pd.date_range("20200101", periods=2),
+    columns=list("abcde"))
+
+
+# Viewing
+df.head(2)
+df.tail(3)
+df.index
+df.columns
+df.to_numpy()
+df.sort_index()
+df.sort_values("col_name")
 ```
 
 ## Selection
