@@ -173,6 +173,7 @@ All skills are base on the implementation of Python 3.
 
 <td><ul style="margin: 8px">
 <li><a href="#creation-and-viewing">Creation and Viewing</li>
+<li><a href="#selection">Selection</li>
 </ul></td>
 </table>
 
@@ -1554,13 +1555,51 @@ df.sort_index()
 df.sort_values("col_name")
 ```
 
-## Selection
+## [Selection](pandas/selection.ipynb)
 
-## Missing Data
+|                     | **Single Column**                                  | **Multiple Columns**                                         | **Continuous Columns**              | **All Columns**      |
+| ------------------- | -------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------- | -------------------- |
+| **Single Row**      | `df.loc[row, column]` or <br> `df.at[row, column]` | `df.loc[row, [column, column]]`                              | `df.loc[row, column:column]`        | `df.loc[row]`        |
+| **Multiple Rows**   | `df.loc[[row, row], column]`                       | `df.loc[[row, row], [column, column]]`                       | `df.loc[[row, row], column:column]` | `df.loc[[row, row]]` |
+| **Continuous Rows** | `df.loc[row:row, column]`                          | `df.loc[row:row, [column, column]]`                          | `df.loc[row:row, column:column]`    | `df[row:row]`        |
+| **All Rows**        | `df[column]`                                       | `df[[column, column]]` or <br> `df.loc[:, [column, column]]` | `df.loc[:, column:column]`          | `df`                 |
 
-## Operation, Merge
+``` py
+df["col1"]
+df[["col1", "col2"]]
+df["row1":"row5"]
 
-## Grouping, Reshaping
+df.loc["row1", "col1"]  # df.iloc[0, 0]
+df.at["row1", "col1"]  # df.iat[0, 0]
+
+df.loc["row1", ["col1", "col2"]]  # df.iloc[0, [0, 1]]
+df.loc["row1", "col1":"col5"]  # df.iloc[0, 0:4]
+
+df.loc[["row1", "row2"]]  # df.iloc[[0, 1]]
+df.loc["row1":"row5", "col1"]  # df.iloc[0:4, 0]
+
+
+df[(df["col1"] > 18)]
+df[(df > 6) & (df < 25)]
+df[df["col1"].isin([10, 15, 0])]
+```
+
+- `df.iloc` is same as `df.loc` but using position.
+- `df.iat` is same as `df.at` but using position.
+
+
+## Setting, Deleting and Missing Data
+
+
+## Operations, Apply Functions
+
+
+## Merge and Grouping
+
+
+## Reshaping and Categorial
+
+
 
 # TODOs
 
