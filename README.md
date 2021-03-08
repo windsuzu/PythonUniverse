@@ -174,6 +174,7 @@ All skills are base on the implementation of Python 3.
 <td><ul style="margin: 8px">
 <li><a href="#creation-and-viewing">Creation and Viewing</li>
 <li><a href="#selection">Selection</li>
+<li><a href="#setting-deleting-and-handling">Setting, Deleting, and Handling</li>
 </ul></td>
 </table>
 
@@ -1588,8 +1589,41 @@ df[df["col1"].isin([10, 15, 0])]
 - `df.iat` is same as `df.at` but using position.
 
 
-## Setting, Deleting and Missing Data
+## [Setting, Deleting, and Handling](pandas/setting_deleting_handling.ipynb)
 
+``` py
+# Modify columns
+df["col1"] += 10
+df.loc[:, "col1"] = "bar"
+df.loc[:, ["col1", "col3"]] = np.arange(12).reshape(6, 2)
+
+# Modify single element
+df.loc["row1", "col1"] = 0
+df.iloc[0, 0] = 1
+
+# Modify by boolean indexing
+df[df < 100] = -df
+
+# Append
+df["total"] = df.sum(axis=1).to_numpy()
+df["gt"] = df["total"] > 50000
+df["foo"] = "bar"
+
+# Insert
+df.insert(0, "col0", df["col2"][:2])  # col_index, col_name, values
+
+# Delete column
+del df["total"]
+df.drop(columns=["foo"], inplace=True)  # same as `df.drop(["foo"], axis=1)`
+gt50000 = df.pop("gt50000")
+
+# Delete row
+df.drop(["e", "d"], inplace=True)
+
+# Handle NaN
+miss_df.dropna(how='any')
+miss_df.fillna(value=10000000)
+```
 
 ## Operations, Apply Functions
 
