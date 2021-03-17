@@ -1625,10 +1625,38 @@ miss_df.dropna(how='any')
 miss_df.fillna(value=10000000)
 ```
 
-## Operations, Apply Functions
+## [Operations and Apply Functions](pandas/operations_apply_functions.ipynb)
 
+``` py
+# Arithmetic
+df + df2
+df - df.iloc[0]
+1 / df
+
+
+# Numpy
+np.sqrt(df)
+np.max(df, axis=1)
+
+
+# Built-in
+df.mean()
+df.max(axis=1)
+
+
+# Apply
+df.apply(np.cumsum, axis=1)
+df.apply(lambda x: x.sum() / x.size)  # x means df
+
+
+# Series
+s.value_counts()
+s.str.upper()
+s.str.split("-").str.get(0)
+```
 
 ## Merge and Grouping
+
 
 
 ## Reshaping and Categorial
