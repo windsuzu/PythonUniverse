@@ -1655,30 +1655,28 @@ s.str.upper()
 s.str.split("-").str.get(0)
 ```
 
-## Merge and Grouping
+## [Concat and Merge](pandas/concat_and_merge.ipynb)
 
+``` py
+pd.concat([df[:3], df.iloc[7:, :2]])
 
+pd.merge(df, df2, on="name", how="right")
+```
 
-## Reshaping and Categorial
+## Grouping and Categorical
 
 
 
 # TODOs
 
-| TODOs          |
-| -------------- |
-| Numba          |
-| Pandas-UI      |
-| Sweetviz       |
-| Matplotlib     |
-| sklearn        |
-| pytorch        |
-| transformers   |
-| tensorboard    |
-| mlflow         |
-| beautiful soup |
-| requests       |
-| scrapy         |
-| selenium       |
-| streamlit      |
-| flask          |
+| TODOs         |
+| ------------- |
+| Numba         |
+| Matplotlib    |
+| sklearn       |
+| transformers  |
+| beautifulsoup |
+| requests      |
+| scrapy        |
+| selenium      |
+| flask         |
