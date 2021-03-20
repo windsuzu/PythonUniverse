@@ -1658,14 +1658,29 @@ s.str.split("-").str.get(0)
 ## [Concat and Merge](pandas/concat_and_merge.ipynb)
 
 ``` py
+# Concat rows
 pd.concat([df[:3], df.iloc[7:, :2]])
 
+# Merge two DataFrame
 pd.merge(df, df2, on="name", how="right")
 ```
 
-## Grouping and Categorical
+## [Grouping and Categorical Data Type](pandas/grouping_categorical.ipynb)
 
+``` py
+# Groupby
+df.groupby("col_A").sum()
+df.groupby(["col_A", "col_B"]).max()
 
+# Categorical - discrete
+df["grade"] = df["grade"].astype("category")
+df["grade"].cat.categories = ["Bad", "Good", "Excellent"]
+df.sort_values(by="grade")
+df.groupby("grade").size()
+
+# Categorical - continuous
+df["grade-labels"] = pd.cut(df["score"], bins=range(0, 120, 20), labels=list("EDCBA"))
+```
 
 # TODOs
 
