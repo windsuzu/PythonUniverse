@@ -175,8 +175,13 @@ All skills are base on the implementation of Python 3.
 <li><a href="#creation-and-viewing">Creation and Viewing</li>
 <li><a href="#selection">Selection</li>
 <li><a href="#setting-deleting-and-handling">Setting, Deleting, and Handling</li>
+<li><a href="#operations-and-apply-functions">Operations and Apply Functions</li>
+<li><a href="#concat-and-merge">Concat and Merge</li>
+<li><a href="#grouping-and-categorical-data-type">Grouping and Categorical Data Type</li>
+<li><a href="#other-pandas-tricks">Other Pandas Tricks</li>
 </ul></td>
 </table>
+
 
 # Must Know
 
@@ -1681,6 +1686,57 @@ df.groupby("grade").size()
 # Categorical - continuous
 df["grade-labels"] = pd.cut(df["score"], bins=range(0, 120, 20), labels=list("EDCBA"))
 ```
+
+## [Other Pandas Tricks](pandas/tricks.ipynb)
+
+``` py
+# Rename Columns
+df.columns = ["col_one", "col_two"]
+df = df.add_prefix("Xx_")
+df = df.add_suffix("_xX")
+df.columns = df.columns.str.replace("Xx", "Oo")
+df.columns = df.columns.str.replace("xX", "oO")
+
+
+# Reverse Row or Column Order
+df.loc[::-1].reset_index(drop=True) # reverse rows
+df.loc[:, ::-1] # reverse columns
+
+
+# Split DataFrame into 2 random subsets
+sub1 = df.sample(frac=0.75, random_state=42)
+sub2 = df.drop(sub1.index)
+sub1.index = sub1.index.sort_values()
+sub2.index = sub2.index.sort_values()
+
+
+# Filter by Category (or Largest Category)
+df[df.genre.isin(["A", "D"])]
+df[~df.genre.isin(["A", "D"])]
+df[df.genre.isin(df.genre.value_counts().nlargest(1).index)]
+
+
+# Split String into Multiple Columns
+df[["first", "last"]] = df["name"].str.split(' ', expand=True)
+df["city"] = df["location"].str.split(", ", expand=True)[0]
+
+
+# Change Display Options (Not Change Data)
+pd.set_option("display.float_format", "${:.2f}".format)
+pd.reset_option("display.float_format")
+
+
+# Style a DataFrame
+style = {"Date": "{:%Y/%m/%d}", "Value": "${:d}", "Volume": "{:,}"}
+df.style.format(style) \
+    .hide_index() \
+    .highlight_max("Value", color="red") \
+    .highlight_min("Value", color="green") \
+    .bar("Area", color="orange", align="zero") \
+    .background_gradient(subset="Volume", cmap="Greens") \
+    .set_caption("Random Chart")
+```
+
 
 # TODOs
 
