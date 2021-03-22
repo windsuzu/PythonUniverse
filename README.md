@@ -161,7 +161,7 @@ All skills are base on the implementation of Python 3.
 </table>
 
 <table>
-<tr><th>Numpy</th><th>Pandas</th></tr>
+<tr><th>Numpy</th><th>Pandas</th><th>Matplotlib (Pyplot)</th></tr>
 <td><ul style="margin: 8px">
 <li><a href="#create-array-or-matrix">Create Array or Matrix</li>
 <li><a href="#basic-operations">Basic Operations</li>
@@ -180,12 +180,16 @@ All skills are base on the implementation of Python 3.
 <li><a href="#grouping-and-categorical-data-type">Grouping and Categorical Data Type</li>
 <li><a href="#other-pandas-tricks">Other Pandas Tricks</li>
 </ul></td>
+
+<td><ul style="margin: 8px">
+<li><a href="#basic-single-plot">Basic (Single Plot)</li>
+</ul></td>
 </table>
 
 
 # Must Know
 
-## [List & Dict & Set Comprehensions](must_know/list_dict_set_comprehensions.md)
+## List & Dict & Set Comprehensions
 
 ``` py
 [(i, j) for i in range(3) for j in range(3) if i > j]
@@ -193,7 +197,9 @@ All skills are base on the implementation of Python 3.
 # [(1, 0), (2, 0), (2, 1)]
 ```
 
-## [Lambda Functions](must_know/lambda_functions.md)
+- [Details 🔥](must_know/list_dict_set_comprehensions.md)
+
+## Lambda Functions
 
 ``` py
 li = [1, 2, 3]
@@ -202,7 +208,9 @@ li = [*map(lambda x: x * 10, li)]
 #li = [10, 20, 30]
 ```
 
-## [Map](must_know/map.md)
+- [Details 🔥](must_know/lambda_functions.md)
+
+## Map
 
 ``` py
 num1 = [100, 1, 20]
@@ -213,7 +221,9 @@ num3 = [40, 6, 30]
 # [100, 6, 94]
 ```
 
-## [Filter](must_know/filter.md)
+- [Details 🔥](must_know/map.md)
+
+## Filter
 
 ``` py
 names = ['Liam', 'Olivia', 'Noah', 'Emma', 'Oliver', 'Ava']
@@ -222,7 +232,9 @@ choice = filter(lambda x: x.startswith('O'), names)
 print(*choice, sep=', ') # Olivia, Oliver
 ```
 
-## [Zip](must_know/zip.md)
+- [Details 🔥](must_know/filter.md)
+
+## Zip
 
 ``` py
 a = [1, 2, 3]
@@ -232,7 +244,9 @@ c = [*zip(a, b)]  # [(1, 4), (2, 5), (3, 6)]
 a, b = zip(*c)    # a=(1, 2, 3),  b=(4, 5, 6)
 ```
 
-## [*args & **kwargs](must_know/arg_kwarg.md)
+- [Details 🔥](must_know/zip.md)
+
+## *args & **kwargs
 
 ### Defining Functions with *arg and **kwarg
 
@@ -256,7 +270,9 @@ func(*["Good", "Morning"], **{"name": "Jay"})
 # Good Morning Jay
 ```
 
-## [Unpack Variables](must_know/unpack_variables.md)
+- [Details 🔥](must_know/arg_kwarg.md)
+
+## Unpack Variables
 
 ### Unpacking Iterable
 
@@ -304,7 +320,9 @@ combine = {**number, **letter}
 combine  # {'one': 1, 'two': 2, 'a': 'A', 'b': 'B'}
 ```
 
-## [Generator (map, filter, zip)](must_know/generator.md)
+- [Details 🔥](must_know/unpack_variables.md)
+
+## Generator (map, filter, zip)
 
 ``` py
 def square_it(value):
@@ -316,7 +334,9 @@ li = square_it(10_000_000)
 [i for i in li if i < 50]  # [0, 1, 4, 9, 16, 25, 36, 49]
 ```
 
-## [Closure & Decorator](must_know/closure_decorator.md)
+- [Details 🔥](must_know/generator.md)
+
+## Closure & Decorator
 
 ``` py
 def count_decorator(count):  # new decorator with argument
@@ -343,7 +363,9 @@ greet("hello")
 # hello
 ```
 
-## [Context Manager](must_know/context_manager.md)
+- [Details 🔥](must_know/closure_decorator.md)
+
+## Context Manager
 
 ``` py
 @contextmanager
@@ -357,7 +379,9 @@ with enterFolder('folder1'), open('example1.txt', 'w') as f:
     f.write('file1')
 ```
 
-## [Magic Method](must_know/magic_method.md)
+- [Details 🔥](must_know/context_manager.md)
+
+## Magic Method
 
 ``` py
 class BinaryInt(str):
@@ -374,7 +398,9 @@ print(a)      # 10
 print(a + 4)  # 110
 ```
 
-## [Metaclasses](must_know/metaclasses.md)
+- [Details 🔥](must_know/magic_method.md)
+
+## Metaclasses
 
 ``` py
 class Meta(type):
@@ -394,7 +420,9 @@ class Derived(Base):
 # TypeError: Bad Class: must_to_do() is needed
 ```
 
-## [Threading & Multiprocessing](must_know/threading_multiprocessing.md)
+- [Details 🔥](must_know/metaclasses.md)
+
+## Threading & Multiprocessing
 
 ``` py
 import concurrent.futures
@@ -412,9 +440,11 @@ with concurrent.futures.ProcessPoolExecutor() as executor:
         print(len(result))
 ```
 
+- [Details 🔥](must_know/threading_multiprocessing.md)
+
 # Classes
 
-## [self (class instance)](classes/self_class_instance.md)                  
+## self (class instance)
 
 ``` py
 class Person:
@@ -429,7 +459,9 @@ p = Person("Jay")
 p.say() == Person.say(p)  # True
 ```
 
-## [variables (class & instance)](classes/variables_class_instance.md)       
+- [Details 🔥](classes/self_class_instance.md)                  
+
+## variables (class & instance)
 
 ``` py
 class Employee:
@@ -449,7 +481,9 @@ e1.pay  # 100
 Employee.pay  # AttributeError: type object 'Employee' has no attribute 'pay'
 ```
 
-## [method vs. classmethod vs. staticmethod](classes/method_class_static.md) 
+- [Details 🔥](classes/variables_class_instance.md)       
+
+## method vs. classmethod vs. staticmethod
 
 ``` py
 class Person:
@@ -471,7 +505,9 @@ p1.name  # Jay
 p1.age   # 99
 ```
 
-## [_ (private) vs. __ (name mangling)](classes/private_name_mangling.md)    
+- [Details 🔥](classes/method_class_static.md) 
+
+## _ (private) vs. __ (name mangling)
 
 ``` py
 class Dog:
@@ -487,7 +523,9 @@ dog.__bark()      # AttributeError: 'Dog' object has no attribute '__bark'
 dog._Dog__bark()  # bark
 ```
 
-## [@property (getter, setter)](classes/property_getter_setter.md)           
+- [Details 🔥](classes/private_name_mangling.md)    
+
+## @property (getter, setter)   
 
 ``` py
 class User:
@@ -517,7 +555,9 @@ user.password_hash  # 7fbccc9c3a9a5afef65563cd00404c1416
 user.password       # Attribute Error: password is not readable.
 ```
 
-## [LEGB (local, enclosing, global, builtins)](classes/legb.md)              
+- [Details 🔥](classes/property_getter_setter.md)
+
+## LEGB (local, enclosing, global, builtins)
 
 ``` py
 min([1, 2, 31])  # builtins min
@@ -532,7 +572,9 @@ def outer():
         min = "local min"
 ```
 
-## [Abstract class](classes/abstract_class.md)                               
+- [Details 🔥](classes/legb.md)       
+
+## Abstract class
 
 ``` py
 from abc import ABC, abstractmethod
@@ -549,7 +591,9 @@ class Base(ABC, object):
         ...
 ```
 
-## [Dataclasses](classes/dataclasses.md)                                     
+- [Details 🔥](classes/abstract_class.md)                               
+
+## Dataclasses                                    
 
 ``` py
 from dataclasses import InitVar, dataclass, field
@@ -572,7 +616,9 @@ item = InventoryItem("product", parts_number=2)
 # InventoryItem (name = 'product', unit_price=0.0, parts=['part1', 'part2'])
 ```
 
-## [Classes in Dynamic Language](classes/dynamic_language.md)                           
+- [Details 🔥](classes/dataclasses.md) 
+
+## Classes in Dynamic Language
 
 ``` py
 def getClass(x):
@@ -590,9 +636,11 @@ cls.b = "123"
 print(cls.a, cls.b)  # 10 123
 ```
 
+- [Details 🔥](classes/dynamic_language.md)                           
+
 # Functions
 
-## [Enclosing function](functions/enclosing.md)  
+## Enclosing function
 
 ``` py
 def add_with_b(b):
@@ -605,7 +653,9 @@ add4(3)  # 7
 add4(7)  # 11
 ```
 
-## [Attrs](functions/attrs.md)                       
+- [Details 🔥](functions/enclosing.md)  
+
+## Attrs
 
 ``` py
 class Cat:
@@ -626,7 +676,9 @@ print(listOfCats)
 # [(meow1: 5), (meow2: 10)]
 ```
 
-## [Functions in Dynamic Language](functions/dynamic_language.md) 
+- [Details 🔥](functions/attrs.md)                       
+
+## Functions in Dynamic Language
 
 ``` py
 for i in range(100):
@@ -645,9 +697,11 @@ def returnFunc(a):
         return add
 ```
 
+- [Details 🔥](functions/dynamic_language.md) 
+
 # Collections
 
-## [defaultdict](collections/defaultdict.md) 
+## defaultdict
 
 ``` py
 from collections import defaultdict
@@ -660,7 +714,9 @@ d["c"].extend([5, 6])
 # defaultdict(<class 'list'>, {'a': [1, 2, 3], 'b': [4], 'c': [5, 6]})
 ```
 
-## [OrderedDict](collections/ordereddict.md) 
+- [Details 🔥](collections/defaultdict.md) 
+
+## OrderedDict
 
 ``` py
 from collections import OrderedDict
@@ -681,7 +737,9 @@ d.move_to_end("D", last=False)
 # OrderedDict ([( 'D', 44), ('B', 46), ('A', 12)])
 ```
 
-## [Counter](collections/counter.md)         
+- [Details 🔥](collections/ordereddict.md) 
+
+## Counter
 
 ``` py
 from collections import Counter
@@ -699,7 +757,9 @@ c.most_common(2)
 # [('dogs', 8), ('birds', 5)]
 ```
 
-## [namedtuple](collections/namedtuple.md)   
+- [Details 🔥](collections/counter.md)         
+
+## namedtuple
 
 ``` py
 from collections import namedtuple
@@ -715,7 +775,9 @@ d2._asdict()
 # OrderedDict([('name', 'happy'), ('age', 3)])
 ```
 
-## [deque](collections/deque.md)             
+- [Details 🔥](collections/namedtuple.md)   
+
+## deque
 
 ``` py
 from collections import deque
@@ -734,9 +796,11 @@ for elem in li[2:]:
     # 40, 42, 45, 43
 ```
 
+- [Details 🔥](collections/deque.md)             
+
 # Itertools
 
-## [Infinite iterators](itertools/infinite_iterators.md)
+## Infinite iterators
 
 ### count
 
@@ -778,7 +842,9 @@ for cat in gen:
     # <__main__.Cat object at 0x0000019AC1C5D348>
 ```
 
-## [Iterators terminating on the shortest input sequence](itertools/terminated_iterators.md)
+- [Details 🔥](itertools/infinite_iterators.md)
+
+## Iterators terminating on the shortest input sequence
 
 ### accumulate
 
@@ -927,7 +993,9 @@ gen = zip_longest("ABC", [1, 2], fillvalue=-1)
 list(gen)  # [('A', 1), ('B', 2), ('C', -1)]
 ```
 
-## [Combinatoric iterators](itertools/combinatoric_iterators.md)
+- [Details 🔥](itertools/terminated_iterators.md)
+
+## Combinatoric iterators
 
 ### product
 
@@ -1005,15 +1073,19 @@ list(gen)
 #  CCC]
 ```
 
+- [Details 🔥](itertools/combinatoric_iterators.md)
+
 # Functools
 
-## [Reduce](functools/reduce.md)
+## Reduce
 
 ``` py
 from functools import reduce
 
 reduce(lambda x, y: x - y, [1, 2, 3, 4, 5], 100)  # 85
 ```
+
+- [Details 🔥](functools/reduce.md)
 
 # String
 
@@ -1340,7 +1412,7 @@ for x in range(10000):
 
 # Modules
 
-## [pathlib](modules/pathlib.ipynb)
+## pathlib
 
 ``` py
 sub_folder = Path("subfolder/subfolder")
@@ -1356,9 +1428,11 @@ file_.unlink()
 Path("subfolder/subfolder").rmdir()
 ```
 
+- [Details 🔥](modules/pathlib.ipynb)
+
 # Numpy
 
-## [Create Array or Matrix](numpy/create_array_matrix.ipynb)
+## Create Array or Matrix
 
 ``` py
 np.array([[1, 2], [3, 4], [5, 6]])  # create from list
@@ -1383,7 +1457,9 @@ rng.normal(3, 2.5, size=(2, 4))  # sample from N(3, 6.25)
 rng.integers(low=2, high=10, size=(10, 2))  # random integer matrix
 ```
 
-## [Basic Operations](numpy/basic_operations.ipynb)
+- [Details 🔥](numpy/create_array_matrix.ipynb)
+
+## Basic Operations
 
 ### Sort and Concatenate
 
@@ -1429,7 +1505,9 @@ A.mean(axis=0)  # [0.4340667 , 0.7072504 , 0.80986881, 0.74171617]
 A.mean(axis=1)  # [0.69220011, 0.65425093]
 ```
 
-## [Indexing and Slicing](numpy/indexing_slicing.ipynb)
+- [Details 🔥](numpy/basic_operations.ipynb)
+
+## Indexing and Slicing
 
 ``` py
 # Index and slicing arrays
@@ -1455,7 +1533,9 @@ x[:3, ...]  # same as x[0:3, :, :] and x[0:3] and x[:3]
 x[::2, ..., np.array([0, 2])]  # same as x[0:5:2, :, np.array([0, 2])]
 ```
 
-## [Shape Manipulation](numpy/shape_manipulation.ipynb)
+- [Details 🔥](numpy/indexing_slicing.ipynb)
+
+## Shape Manipulation
 
 ``` py
 A = np.array([[[1, 2, 3], [4, 5, 6]], [[4, 6, 8], [2, 1, 6]]])
@@ -1473,7 +1553,9 @@ A = A.flatten()  # (12,)
 A = A.reshape(2, -1, 2)  # (2, 3, 2)
 ```
 
-## [Copying](numpy/copying.ipynb)
+- [Details 🔥](numpy/shape_manipulation.ipynb)
+
+## Copying
 
 ``` py
 # shallow copy: values will change on every variable
@@ -1489,7 +1571,9 @@ b = a[:100].copy()
 del a
 ```
 
-## [Broadcasting](numpy/broadcasting.ipynb)
+- [Details 🔥](numpy/copying.ipynb)
+
+## Broadcasting
 
 ``` py
 # scalar broadcasting
@@ -1515,9 +1599,11 @@ a + b  # (4, 3)
 # [3]                 [4 5 6]
 ```
 
+- [Details 🔥](numpy/broadcasting.ipynb)
+
 # Pandas
 
-## [Creation and Viewing](pandas/creation_viewing.ipynb)
+## Creation and Viewing
 
 ``` py
 # Create Series
@@ -1561,7 +1647,9 @@ df.sort_index()
 df.sort_values("col_name")
 ```
 
-## [Selection](pandas/selection.ipynb)
+- [Details 🔥](pandas/creation_viewing.ipynb)
+
+## Selection
 
 |                     | **Single Column**                                  | **Multiple Columns**                                         | **Continuous Columns**              | **All Columns**      |
 | ------------------- | -------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------- | -------------------- |
@@ -1592,9 +1680,9 @@ df[df["col1"].isin([10, 15, 0])]
 
 - `df.iloc` is same as `df.loc` but using position.
 - `df.iat` is same as `df.at` but using position.
+- [Details 🔥](pandas/selection.ipynb)
 
-
-## [Setting, Deleting, and Handling](pandas/setting_deleting_handling.ipynb)
+## Setting, Deleting, and Handling
 
 ``` py
 # Modify columns
@@ -1630,7 +1718,9 @@ miss_df.dropna(how='any')
 miss_df.fillna(value=10000000)
 ```
 
-## [Operations and Apply Functions](pandas/operations_apply_functions.ipynb)
+- [Details 🔥](pandas/setting_deleting_handling.ipynb)
+
+## Operations and Apply Functions
 
 ``` py
 # Arithmetic
@@ -1660,7 +1750,9 @@ s.str.upper()
 s.str.split("-").str.get(0)
 ```
 
-## [Concat and Merge](pandas/concat_and_merge.ipynb)
+- [Details 🔥](pandas/operations_apply_functions.ipynb)
+
+## Concat and Merge
 
 ``` py
 # Concat rows
@@ -1670,7 +1762,9 @@ pd.concat([df[:3], df.iloc[7:, :2]])
 pd.merge(df, df2, on="name", how="right")
 ```
 
-## [Grouping and Categorical Data Type](pandas/grouping_categorical.ipynb)
+- [Details 🔥](pandas/concat_and_merge.ipynb)
+
+## Grouping and Categorical Data Type
 
 ``` py
 # Groupby
@@ -1687,7 +1781,9 @@ df.groupby("grade").size()
 df["grade-labels"] = pd.cut(df["score"], bins=range(0, 120, 20), labels=list("EDCBA"))
 ```
 
-## [Other Pandas Tricks](pandas/tricks.ipynb)
+- [Details 🔥](pandas/grouping_categorical.ipynb)
+
+## Other Pandas Tricks
 
 ``` py
 # Rename Columns
@@ -1737,13 +1833,63 @@ df.style.format(style) \
     .set_caption("Random Chart")
 ```
 
+- [Details 🔥](pandas/tricks.ipynb)
+
+# Matplotlib (Pyplot)
+
+## Basic (Single Plot)
+
+``` py
+import matplotlib.pyplot as plt
+
+# with this magic function, we can skip `plt.show()`
+%matplotlib inline
+
+plt.plot(np.sin(np.linspace(0, 10, 100)), "*-b", lw=2, markersize=5, label="sin(x)")
+plt.plot(np.log(np.arange(100)), c="g", ls="--", marker=".", lw=2, markersize=5, label="log(x)")
+
+plt.xlabel("X here")
+plt.ylabel("Y here")
+
+plt.title("sin(x) and log(x)")
+
+plt.grid()
+
+plt.legend()
+
+plt.text(x=70, y=-1, s="hahahaha")
+
+plt.annotate("wow \nmax", xy=(16, 1), xytext=(40, 0.9), arrowprops={"facecolor": "orange", "shrink": 0.05})
+plt.annotate("wow \nmax again", xy=(78, 1), xytext=(95, 0.9), arrowprops={"facecolor": "red", "shrink": 0.05})
+```
+
+- [Details 🔥](matplotlib/basic.ipynb)
+
+## Multiple Figures and Axes
+
+
+
+## Style
+
+
+
+
+<!-- plot - fill
+bar
+pie
+stack
+histogram - distribution
+scatter
+time series
+image -->
+
+
 
 # TODOs
 
 | TODOs         |
 | ------------- |
 | Numba         |
-| Matplotlib    |
 | sklearn       |
 | transformers  |
 | beautifulsoup |
