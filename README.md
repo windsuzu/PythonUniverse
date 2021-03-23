@@ -183,9 +183,9 @@ All skills are base on the implementation of Python 3.
 
 <td><ul style="margin: 8px">
 <li><a href="#basic-single-plot">Basic (Single Plot)</li>
+<li><a href="#multiple-figures-and-axes">Multiple Figures and Axes</li>
 </ul></td>
 </table>
-
 
 # Must Know
 
@@ -1867,7 +1867,28 @@ plt.annotate("wow \nmax again", xy=(78, 1), xytext=(95, 0.9), arrowprops={"facec
 
 ## Multiple Figures and Axes
 
+``` py
+# Pyplot style
+plt.figure(1)
+plt.plot(...)
 
+plt.figure(2)
+plt.subplot(2, 1, 1)
+plt.plot(...)
+plt.subplot(2, 1, 2)
+plt.plot(...)
+
+
+# Object-oriented style
+fig1, ax = plt.subplots()
+ax.plot(...)
+
+fig2, axs = plt.subplots(2, 1)
+axs[0].plot(...)
+axs[1].plot(...)
+```
+
+- [Details 🔥](matplotlib/figures_axes.ipynb)
 
 ## Style
 
