@@ -184,6 +184,7 @@ All skills are base on the implementation of Python 3.
 <td><ul style="margin: 8px">
 <li><a href="#basic-single-plot">Basic (Single Plot)</li>
 <li><a href="#multiple-figures-and-axes">Multiple Figures and Axes</li>
+<li><a href="#line-plots-and-filling-area">Line Plots and Filling Area</li>
 </ul></td>
 </table>
 
@@ -1863,22 +1864,13 @@ plt.annotate("wow \nmax", xy=(16, 1), xytext=(40, 0.9), arrowprops={"facecolor":
 plt.annotate("wow \nmax again", xy=(78, 1), xytext=(95, 0.9), arrowprops={"facecolor": "red", "shrink": 0.05})
 ```
 
+![](assets/matplotlib/basic.jpg)
+
 - [Details 🔥](matplotlib/basic.ipynb)
 
 ## Multiple Figures and Axes
 
 ``` py
-# Pyplot style
-plt.figure(1)
-plt.plot(...)
-
-plt.figure(2)
-plt.subplot(2, 1, 1)
-plt.plot(...)
-plt.subplot(2, 1, 2)
-plt.plot(...)
-
-
 # Object-oriented style
 fig1, ax = plt.subplots()
 ax.plot(...)
@@ -1886,25 +1878,78 @@ ax.plot(...)
 fig2, axs = plt.subplots(2, 1)
 axs[0].plot(...)
 axs[1].plot(...)
+
+
+# Pyplot style
+plt.figure(1)
+plt.title("Figure 1")
+
+plt.figure(2)
+plt.subplot(311)
+plt.title("Figure 2")
+
+plt.subplot(323)
+plt.subplot(324)
+
+plt.subplot(337)
+plt.subplot(338)
+plt.subplot(339)
 ```
+
+<p float="left">
+  <img src="assets/matplotlib/figure1.jpg" width="350" />
+  <img src="assets/matplotlib/figure2.jpg" width="350" /> 
+</p>
 
 - [Details 🔥](matplotlib/figures_axes.ipynb)
 
-## Style
+## Line Plots and Filling Area
+
+``` py
+# Line Plots
+plt.plot(years, 
+         salary,
+         marker="o",
+         markersize=5,
+         lw=2,
+         ls="-",
+         )
 
 
+# Filling Areas
+plt.fill_between(years, 
+                 salary,
+                 salary_mean,
+                 where=(salary > salary_mean),
+                 alpha=.4,
+                 color="green", 
+                 edgecolor="black",
+                 interpolate=True,
+                 label="On Average"
+                 )
+```
 
+<p float="center">
+  <img src="assets/matplotlib/line_plots.jpg" width="260" />
+  <img src="assets/matplotlib/filling_area.jpg" width="260" /> 
+  <img src="assets/matplotlib/filling_area_with_mean.jpg" width="260" /> 
+</p>
 
-<!-- plot - fill
-bar
-pie
-stack
-histogram - distribution
-scatter
-time series
-image -->
+- [Details 🔥](matplotlib/plot_and_filling_area.ipynb)
 
+## Time Series
 
+## Scatter Plots
+
+## Bar Charts
+
+## Pie Charts
+
+## Histograms
+
+## Stack Plots
+
+## Image
 
 # TODOs
 
