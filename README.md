@@ -185,6 +185,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#basic-single-plot">Basic (Single Plot)</li>
 <li><a href="#multiple-figures-and-axes">Multiple Figures and Axes</li>
 <li><a href="#line-plots-and-filling-area">Line Plots and Filling Area</li>
+<li><a href="#time-series">Time Series</li>
 </ul></td>
 </table>
 
@@ -1938,6 +1939,28 @@ plt.fill_between(years,
 - [Details 🔥](matplotlib/plot_and_filling_area.ipynb)
 
 ## Time Series
+
+``` py
+import matplotlib.dates as mdates
+
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%a, %d %m"))
+plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=7))
+plt.gca().xaxis.set_minor_locator(mdates.DayLocator())
+
+plt.plot_date(dates, prices, 
+              ls="solid",
+              c="orange",
+              marker="^",
+              markersize=10)
+
+plt.grid()
+plt.tight_layout()
+```
+
+![](assets/matplotlib/time_series.jpg)
+
+- [Details 🔥](matplotlib/time_series.ipynb)
+
 
 ## Scatter Plots
 
