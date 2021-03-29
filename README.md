@@ -186,6 +186,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#multiple-figures-and-axes">Multiple Figures and Axes</li>
 <li><a href="#line-plots-and-filling-area">Line Plots and Filling Area</li>
 <li><a href="#time-series">Time Series</li>
+<li><a href="#scatter-plots">Scatter Plots</li>
 </ul></td>
 </table>
 
@@ -1963,6 +1964,30 @@ plt.tight_layout()
 
 
 ## Scatter Plots
+
+``` py
+plt.scatter(temperature, ice_cream_sales, 
+            s=ice_cream_sales,  # set the size according to the prices of the ice cream
+            c=colors,  # set the colors according to the prices of the ice cream
+            cmap="Greens",  # preferred color type
+            edgecolor="black",  # the edge color of points
+            lw=0.5,  # the edge width of points
+            alpha=.75,
+            )
+
+plt.xlabel("temperature")
+plt.ylabel("ice cream price")
+plt.yscale("log")   # use log scale on y-axis to handle outliners
+
+cbar = plt.colorbar()
+cbar.set_label("Expensive")
+
+plt.tight_layout()
+```
+
+![](assets/matplotlib/scattor_plots.jpg)
+
+- [Details 🔥](matplotlib/scatter_plots.ipynb)
 
 ## Bar Charts
 
