@@ -6,9 +6,6 @@ All skills are base on the implementation of Python 3.
 
 # Table of contents
 
-<!-- \[(.*)\]\((.*)\) -->
-<!-- <li><a href="$2">$1</li> -->
-
 <table>
 <tr><th>Must Know</th><th>Classes</th><th>Functions</th></tr>
 <tr>
@@ -187,6 +184,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#line-plots-and-filling-area">Line Plots and Filling Area</li>
 <li><a href="#time-series">Time Series</li>
 <li><a href="#scatter-plots">Scatter Plots</li>
+<li><a href="#bar-charts">Bar Charts</li>
 </ul></td>
 </table>
 
@@ -1991,6 +1989,32 @@ plt.tight_layout()
 
 ## Bar Charts
 
+``` py
+# Bar Charts
+plt.bar(index - width, salary_all, width=0.25, label="All Devs")
+plt.bar(index, salary_py, width=0.25, label="Python")
+plt.bar(index + width, salary_js, width=0.25, label="JavaScript")
+plt.xticks(ticks=index, labels=ages)
+
+plt.title("Median Salary (USD) by Age")
+plt.xlabel("Ages")
+plt.ylabel("Median Salary (USD)")
+plt.legend()
+plt.tight_layout()
+
+
+# Horizontal Bar Charts
+plt.barh(language, popularity)
+plt.title("Most Popular Languages")
+plt.xlabel("Number of People Who Use")
+plt.tight_layout()
+```
+
+![](assets/matplotlib/bar_charts.jpg)
+![](assets/matplotlib/horizontal_bar_charts.jpg)
+
+- [Details 🔥](matplotlib/bar_charts.ipynb)
+
 ## Pie Charts
 
 ## Histograms
@@ -1998,6 +2022,8 @@ plt.tight_layout()
 ## Stack Plots
 
 ## Image
+
+## Correlation Heatmap
 
 # TODOs
 
