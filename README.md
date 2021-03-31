@@ -185,6 +185,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#time-series">Time Series</li>
 <li><a href="#scatter-plots">Scatter Plots</li>
 <li><a href="#bar-charts">Bar Charts</li>
+<li><a href="#pie-charts">Pie Charts</li>
 </ul></td>
 </table>
 
@@ -1906,6 +1907,10 @@ plt.subplot(339)
 ## Line Plots and Filling Area
 
 ``` py
+years = [1.1, 1.3, 1.5, 2.0, 2.2, ...]
+salary = [39343.00, 46205.00, 37731.00, 43525.00, 39891.00, ...]
+salary_mean = np.mean(salary)
+
 # Line Plots
 plt.plot(years, 
          salary,
@@ -1942,6 +1947,9 @@ plt.fill_between(years,
 ``` py
 import matplotlib.dates as mdates
 
+dates = np.arange(np.datetime64("2021-01-01"), np.datetime64("2021-01-22"))
+prices = np.random.default_rng(42).normal(500, 30, len(dates))
+
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%a, %d %m"))
 plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=7))
 plt.gca().xaxis.set_minor_locator(mdates.DayLocator())
@@ -1964,6 +1972,10 @@ plt.tight_layout()
 ## Scatter Plots
 
 ``` py
+temperature = [14.2, 16.4, 11.9, 15.2, ...]
+ice_cream_sales = [215, 325, 185, 332, ...]
+colors = np.array(ice_cream_sales) / np.linalg.norm(ice_cream_sales)
+
 plt.scatter(temperature, ice_cream_sales, 
             s=ice_cream_sales,  # set the size according to the prices of the ice cream
             c=colors,  # set the colors according to the prices of the ice cream
@@ -1991,6 +2003,12 @@ plt.tight_layout()
 
 ``` py
 # Bar Charts
+ages = [25, 26, 27, 28, 29, ...]
+salary_all = [38496, 42000, 46752, 49320, 53200, ...]
+
+index = np.arange(len(ages))
+width = 0.25
+
 plt.bar(index - width, salary_all, width=0.25, label="All Devs")
 plt.bar(index, salary_py, width=0.25, label="Python")
 plt.bar(index + width, salary_js, width=0.25, label="JavaScript")
@@ -2004,6 +2022,9 @@ plt.tight_layout()
 
 
 # Horizontal Bar Charts
+language = ['JavaScript', 'HTML/CSS', 'SQL', 'Python', ...]
+popularity = [59219, 55466, 47544, 36443, ...]
+
 plt.barh(language, popularity)
 plt.title("Most Popular Languages")
 plt.xlabel("Number of People Who Use")
@@ -2016,6 +2037,28 @@ plt.tight_layout()
 - [Details 🔥](matplotlib/bar_charts.ipynb)
 
 ## Pie Charts
+
+``` py
+grade = ["A", "B", "C", "D", "E"]
+number = [10, 18, 23, 8, 5]
+explode = [0.1, 0, 0, 0, 0]
+
+plt.pie(number, 
+        labels=grade,
+        shadow=True,
+        autopct="%1.1f%%",
+        pctdistance=0.6,
+        startangle=90,
+        explode=explode
+        )
+
+plt.title("Test Grade")
+plt.tight_layout()
+```
+
+![](assets/matplotlib/pie_charts.jpg)
+
+- [Details 🔥](matplotlib/pie_charts.ipynb)
 
 ## Histograms
 
