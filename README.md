@@ -186,6 +186,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#scatter-plots">Scatter Plots</li>
 <li><a href="#bar-charts">Bar Charts</li>
 <li><a href="#pie-charts">Pie Charts</li>
+<li><a href="#histograms">Histograms</li>
 </ul></td>
 </table>
 
@@ -2031,8 +2032,10 @@ plt.xlabel("Number of People Who Use")
 plt.tight_layout()
 ```
 
-![](assets/matplotlib/bar_charts.jpg)
-![](assets/matplotlib/horizontal_bar_charts.jpg)
+<p float="center">
+  <img src="assets/matplotlib/bar_charts.jpg" width="380" />
+  <img src="assets/matplotlib/horizontal_bar_charts.jpg" width="380" /> 
+</p>
 
 - [Details 🔥](matplotlib/bar_charts.ipynb)
 
@@ -2061,6 +2064,38 @@ plt.tight_layout()
 - [Details 🔥](matplotlib/pie_charts.ipynb)
 
 ## Histograms
+
+``` py
+height_stats = np.random.default_rng(42).normal(160, 15, 1000)
+
+interval_bin = [120, 130, 140, 150, 160, 170, 180, 190, 200]
+plt.hist(height_stats, bins=interval_bin,
+         edgecolor="black", lw=1, density=True)
+
+# Plot the probability density curve
+import scipy.stats as ss
+density = ss.kde.gaussian_kde(height_stats)
+index = np.arange(120, 200)
+plt.plot(index, 
+         density.evaluate(index), 
+         color="pink",
+         lw=3,
+         ls="--",
+         label="Probability Density")
+
+# Plot the mean line
+plt.axvline(np.mean(height_stats), c="orange", lw=5, label="Height Mean")
+plt.legend()
+
+plt.title("Height Stats")
+plt.xlabel("Heights")
+plt.ylabel("Probability Density")
+plt.tight_layout()
+```
+
+![](assets/matplotlib/histograms.jpg)
+
+- [Details 🔥](matplotlib/histograms.ipynb)
 
 ## Stack Plots
 
