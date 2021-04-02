@@ -187,6 +187,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#bar-charts">Bar Charts</li>
 <li><a href="#pie-charts">Pie Charts</li>
 <li><a href="#histograms">Histograms</li>
+<li><a href="#stack-plots">Stack Plots</li>
 </ul></td>
 </table>
 
@@ -2098,6 +2099,35 @@ plt.tight_layout()
 - [Details 🔥](matplotlib/histograms.ipynb)
 
 ## Stack Plots
+
+``` py
+years = [1950, 1960, 1970, 1980, 1990, 2000, 2010, 2018]
+
+population_by_continent = {
+    'africa': [228, 284, 365, 477, 631, 814, 1044, 1275],
+    'americas': [340, 425, 519, 619, 727, 840, 943, 1006],
+    'asia': [1394, 1686, 2120, 2625, 3202, 3714, 4169, 4560],
+    'europe': [220, 253, 276, 295, 310, 303, 294, 293],
+    'oceania': [12, 15, 19, 22, 26, 31, 36, 39],
+}
+
+y = population_by_continent.values()
+labels = population_by_continent.keys()
+colors = ["#96ceb4", "#ffeead", "#ff6f69", "#ffcc5c", "#88d8b0"]
+
+plt.style.use("seaborn")
+plt.stackplot(years, y, labels=labels, colors=colors)
+
+plt.legend(loc="upper left")
+plt.title("World Population")
+plt.xlabel("Year")
+plt.ylabel("Population (Millions)")
+plt.tight_layout()
+```
+
+![](assets/matplotlib/stack_plots.jpg)
+
+- [Details 🔥](matplotlib/stack_plots.ipynb)
 
 ## Image
 
