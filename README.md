@@ -188,6 +188,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#pie-charts">Pie Charts</li>
 <li><a href="#histograms">Histograms</li>
 <li><a href="#stack-plots">Stack Plots</li>
+<li><a href="#image">Image</li>
 </ul></td>
 </table>
 
@@ -2131,7 +2132,24 @@ plt.tight_layout()
 
 ## Image
 
-## Correlation Heatmap
+``` py
+img = mpimg.imread("https://www.catster.com/wp-content/uploads/1970/01/Am-ShortHair-breed_getty1140883355-768x513.png")
+plt.imshow(img)
+
+# Applying pseudocolor schemes
+plt.imshow(img[..., 0], cmap="gray")
+plt.colorbar()
+
+# Flipping Photos Vertically or Horizontally
+plt.imshow(img[::-1])  # Reverse at the first axis == vertical flip
+plt.imshow(img[:, ::-1])  # Reverse at the second axis == horizontal flip
+```
+
+![](assets/matplotlib/image.jpg)
+
+- [Details 🔥](matplotlib/image.ipynb)
+
+## Heatmap
 
 # TODOs
 
