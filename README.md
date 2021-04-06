@@ -159,6 +159,7 @@ All skills are base on the implementation of Python 3.
 
 <table>
 <tr><th>Numpy</th><th>Pandas</th><th>Matplotlib (Pyplot)</th></tr>
+
 <td><ul style="margin: 8px">
 <li><a href="#create-array-or-matrix">Create Array or Matrix</li>
 <li><a href="#basic-operations">Basic Operations</li>
@@ -189,6 +190,7 @@ All skills are base on the implementation of Python 3.
 <li><a href="#histograms">Histograms</li>
 <li><a href="#stack-plots">Stack Plots</li>
 <li><a href="#image">Image</li>
+<li><a href="#styles-colors-colormaps">Styles, Colors, Colormaps</li>
 </ul></td>
 </table>
 
@@ -2149,7 +2151,42 @@ plt.imshow(img[:, ::-1])  # Reverse at the second axis == horizontal flip
 
 - [Details 🔥](matplotlib/image.ipynb)
 
-## Heatmap
+# Styles, Colors, Colormaps
+
+``` py
+# Switch Style
+plt.style.use("seaborn-pastel")
+
+# Data
+x = np.random.default_rng(42).integers(0, 100, 100)
+y = (2*x+1) * np.random.default_rng(43).normal(5, 1, 100)
+
+regr = sklearn.linear_model.LinearRegression()
+regr.fit(x[:, np.newaxis], y[:, np.newaxis])
+regr_line = regr.predict(x[:, np.newaxis])
+
+# Plotting with fancy color and colormap
+plt.scatter(x, y, c=y, alpha=0.25, cmap="plasma")
+
+plt.plot(x, regr_line, 
+         color="darkviolet", 
+         alpha=0.5,
+         lw=5, ls="-",
+         label="regression line")
+
+
+plt.title("Linear Regression Test")
+plt.xlabel("X")
+plt.ylabel("y")
+plt.legend()
+plt.colorbar()
+```
+
+![](assets/matplotlib/styles_colors.jpg)
+
+- [Style sheets reference](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html)
+- [List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html)
+- [Colormap reference](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
 
 # TODOs
 
