@@ -150,7 +150,7 @@ All skills are base on the implementation of Python 3.
 </table>
 
 <table>
-<tr><th>Module</th></tr>
+<tr><th>Built-ins</th></tr>
 <td><ul style="margin: 8px">
 <li><a href="#pathlib">pathlib</li>
 </ul>
@@ -193,6 +193,16 @@ All skills are base on the implementation of Python 3.
 <li><a href="#styles-colors-colormaps">Styles, Colors, Colormaps</li>
 </ul></td>
 </table>
+
+
+<table>
+<tr><th>Seaborn</th></tr>
+<td><ul style="margin: 8px">
+<li><a href="#basic-seaborn">Basic (Seaborn)</li>
+</ul></td>
+</table>
+
+
 
 # Must Know
 
@@ -2188,8 +2198,60 @@ plt.colorbar()
 - [List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html)
 - [Colormap reference](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
 
-# TODOs
+# Seaborn
 
+## Basic (Seaborn)
+
+``` py
+x = np.array(range(1, 5))
+y = x**2
+df = pd.DataFrame(zip(x, y), columns=["col_1", "col_2"])
+
+# Plotting with data parameter
+def plot():
+    sns.lineplot(x="col_1", y="col_2", data=df)
+
+# Seaborn Styles
+sns.set_style("white")
+
+# Scaling the plots
+sns.set_context("paper", font_scale=1.5)
+
+# Changing the figure Size
+plt.figure(figsize=(8, 4))  # width, height 
+
+# Using Seaborn with Matplotlib
+plt.subplot(211)
+plt.title("Square X")
+plot()
+
+# Seaborn Styles Context Manager
+with sns.axes_style("darkgrid"):
+    plt.subplot(212)
+    plot()
+
+plt.tight_layout()
+```
+
+![](assets/seaborn/basic.jpg)
+
+- [Details 🔥](seaborn/basic.ipynb)
+
+<!-- ## Color Palette
+
+## Multiple Axes
+
+## Relational plots
+
+## Categorical Plots
+
+## Distribution Plots
+
+## Regression Plots -->
+
+
+
+<!-- 
 | TODOs         |
 | ------------- |
 | Numba         |
@@ -2199,4 +2261,4 @@ plt.colorbar()
 | requests      |
 | scrapy        |
 | selenium      |
-| flask         |
+| flask         | -->
