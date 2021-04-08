@@ -199,6 +199,7 @@ All skills are base on the implementation of Python 3.
 <tr><th>Seaborn</th></tr>
 <td><ul style="margin: 8px">
 <li><a href="#basic-seaborn">Basic (Seaborn)</li>
+<li><a href="#color-palette">Color Palette</li>
 </ul></td>
 </table>
 
@@ -2237,7 +2238,33 @@ plt.tight_layout()
 
 - [Details 🔥](seaborn/basic.ipynb)
 
-<!-- ## Color Palette
+## Color Palette
+
+``` py
+# Sequential Palette
+palette = sns.color_palette("YlGn")
+sns.palplot(palette)
+plt.title("YlGn Colormap (Sequential)")
+
+# Diverging Palette
+palette = sns.color_palette("coolwarm")
+sns.palplot(palette)
+plt.title("coolwarm Colormap (Diverging)")
+
+# Qualitative Palette
+palette = sns.color_palette("Pastel2")
+sns.palplot(palette)
+plt.title("Pastel2 Colormap (Qualitative)")
+```
+<p float="left">
+  <img src="assets/seaborn/palettes1.jpg" /><br>
+  <img src="assets/seaborn/palettes2.jpg" /><br>
+  <img src="assets/seaborn/palettes3.jpg" />
+</p>
+
+- [Details 🔥](seaborn/palette.ipynb)
+
+<!-- ## 
 
 ## Multiple Axes
 
@@ -2248,8 +2275,6 @@ plt.tight_layout()
 ## Distribution Plots
 
 ## Regression Plots -->
-
-
 
 <!-- 
 | TODOs         |
