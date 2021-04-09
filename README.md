@@ -200,6 +200,7 @@ All skills are base on the implementation of Python 3.
 <td><ul style="margin: 8px">
 <li><a href="#basic-seaborn">Basic (Seaborn)</li>
 <li><a href="#color-palette">Color Palette</li>
+<li><a href="#multiple-plots">Multiple Plots</li>
 </ul></td>
 </table>
 
@@ -2264,9 +2265,49 @@ plt.title("Pastel2 Colormap (Qualitative)")
 
 - [Details 🔥](seaborn/palette.ipynb)
 
+## Multiple Plots
+
+- [Details 🔥](seaborn/multiple_plots.ipynb)
+
+### Using Matplotlib
+``` py
+data = sns.load_dataset("iris")
+
+plt.figure(figsize=(11, 3))
+plt.subplot(121)
+sns.lineplot(x="sepal_length", y="sepal_width", data=data)
+
+plt.subplot(122)
+sns.lineplot(x="petal_length", y="petal_width", data=data)
+```
+
+![](assets/seaborn/subplot.jpg)
+
+### Using Seaborn
+
+#### FacetGrid
+
+``` py
+grid = sns.FacetGrid(data, col="species")
+grid.map(plt.plot, "sepal_width")
+```
+
+![](assets/seaborn/facet_grid.jpg)
+
+#### PairGrid
+
+``` py
+x_vars = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
+y_vars = ["species"]
+
+grid = sns.PairGrid(data, x_vars=x_vars, y_vars=y_vars)
+grid.map(sns.barplot)
+```
+
+![](assets/seaborn/pair_grid.jpg)
+
 <!-- ## 
 
-## Multiple Axes
 
 ## Relational plots
 
