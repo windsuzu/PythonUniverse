@@ -1,9 +1,5 @@
 ![](assets/python_universe.gif)
 
-In this Python Universe, I want to learn and show you all the Python skills.
-
-All skills are base on the implementation of Python 3.
-
 # Table of contents
 
 <table>
